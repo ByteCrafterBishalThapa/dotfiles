@@ -7,6 +7,7 @@ fi
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
+export BASH_SILENCE_DEPRECATION_WARNING=1
 
 alias edit="vim"
 alias gs="git status"
