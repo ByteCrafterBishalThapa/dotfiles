@@ -36,4 +36,9 @@ autocmd Filetype java setlocal syntax=OFF nonumber autoindent
 iabbrev sout System.out.println("");<Esc>3h2x
 iabbrev main public static void main(String[] args) {<CR>}<esc>O
 
+" Sets Alt + --> (tab next) & Alt + <-- (tab previous)
+execute "set <M-f>=\ef"
+execute "set <M-b>=\eb"
+map <M-f> gt
+map <M-b> gT
 
