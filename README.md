@@ -23,3 +23,5 @@ Next steps:
 #### 4. Install Tmux 
 ```brew install tmux```
 - Create symbolic link `ln -s ${path}/dotfiles/tmux.conf ~/.tmux.conf`
+
+#### 5. Install <a href="https://sdkman.io/install"> SDKMAN </a>
