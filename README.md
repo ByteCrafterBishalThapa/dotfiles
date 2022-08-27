@@ -1,5 +1,5 @@
 ### Introduction
-This repo contains my dotfile setup configuration. It helps me to setup and maintain my machine.
+This repo contains configuration files. I use it to setup machine.
 <hr>
 
 ### Clone this repo and follow this instrusctions 
