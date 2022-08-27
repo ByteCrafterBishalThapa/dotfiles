@@ -20,8 +20,7 @@ Next steps:
     eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 
-#### 4. Install Tmux 
-```brew install tmux```
+#### 4. Install <a href="https://github.com/tmux/tmux/wiki">Tmux</a> 
 - Create symbolic link `ln -s ${path}/dotfiles/tmux.conf ~/.tmux.conf`
 
 #### 5. Install <a href="https://sdkman.io/install"> SDKMAN </a>
