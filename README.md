@@ -2,8 +2,13 @@
 This repo contains my dotfile setup configuration. It helps me to setup and maintain my machine.
 <hr>
 
+### Clone this repo and follow this instrusctions 
+
 ### 1. Create symbolic link
 - `ln -s ${path}/dotfiles/vimrc ~/.vimrc`
+
+`${path}` Where this repo is cloned 
+
 
 #### 2. Install <a href="https://ohmyz.sh/#install">Oh My Zsh</a>.
 - Create symbolic link `ln -s ${path}/dotfiles/zshrc ~/.zshrc`
