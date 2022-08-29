@@ -18,13 +18,11 @@ source $ZSH/oh-my-zsh.sh
 
 PROMPT="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
 PROMPT+='%{$fg[white]%}%~%{$reset_color%}$(git_prompt_info) $ '
-
 # git settings
-ZSH_THEME_GIT_PROMPT_PREFIX=" ${fg[white]%}(${fg[green]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX=" ${FG[075]}(${FG[078]}"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 ZSH_THEME_GIT_PROMPT_DIRTY="${FG[214]}*%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="${fg[white]%})%{$reset_color%}"
-
+ZSH_THEME_GIT_PROMPT_SUFFIX="${FG[075]})%{$reset_color%}"
 # --------------------------------------------------
 export EDITOR='vim'
 
