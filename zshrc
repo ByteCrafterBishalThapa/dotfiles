@@ -41,6 +41,10 @@ HISTCONTROL=ignoreboth
 HISTTIMEFORMAT="%Y-%m-%d %T "
 
 
+
+[[ -s "$HOME/.zsh_profile" ]] && source "$HOME/.zsh_profile"
+
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
