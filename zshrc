@@ -41,6 +41,7 @@ HISTCONTROL=ignoreboth
 HISTTIMEFORMAT="%Y-%m-%d %T "
 
 
+export TERM=xterm-color
 
 [[ -s "$HOME/.zsh_profile" ]] && source "$HOME/.zsh_profile"
 

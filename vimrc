@@ -5,6 +5,7 @@
 let g:loaded_matchparen=1						  " Disable matching parenthesis hightlightg	
 
 syntax on
+highlight Comment ctermfg=lightblue
 set nocompatible 
 set showcmd                           " Show size of visual selection
 set nowrap                            " Don't wrap long lines
@@ -37,8 +38,18 @@ iabbrev sout System.out.println("");<Esc>3h2x
 iabbrev main public static void main(String[] args) {<CR>}<esc>O
 
 " Sets Alt + --> (tab next) & Alt + <-- (tab previous)
-execute "set <M-f>=\ef"
-execute "set <M-b>=\eb"
-map <M-f> gt
-map <M-b> gT
+" execute "set <M-f>=\ef"
+" execute "set <M-b>=\eb"
+" map <M-f> gt
+" map <M-b> gT
 
+nnoremap <tab> gt 
+nnoremap <S-tab> gT
+
+set number
+
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+augroup END
