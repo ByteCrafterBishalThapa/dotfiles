@@ -29,3 +29,7 @@ Next steps:
 - Create symbolic link `ln -s ${path}/dotfiles/tmux.conf ~/.tmux.conf`
 
 #### 5. Install <a href="https://sdkman.io/install"> SDKMAN </a>
+
+#### 6. Install `brew install ruby`
+- Follow the last instruction put the system variable in  `~/.zsh_profile`
+  
