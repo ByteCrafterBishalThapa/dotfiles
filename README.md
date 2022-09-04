@@ -16,12 +16,12 @@ This repo contains configuration files. I use it to setup machine.
 `${path}` Where this repo is cloned 
 
 #### 3. Install <a href="https://brew.sh/"> HomeBrew </a>.
-- Follow the last instruction of the instllation. Should be something like below (don't copy: follow instruction)
+- Follow the last instruction of the instllation. Should be something like below. Don't copy just follow instruction)
 
 ``` 
 Next steps:
 - Run these two commands in your terminal to add Homebrew to your PATH:
-    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/devbith/.zprofile
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zsh_profile
     eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 
