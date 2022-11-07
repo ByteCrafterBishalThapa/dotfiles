@@ -46,6 +46,19 @@ iabbrev main public static void main(String[] args) {<CR>}<esc>O
 nnoremap <tab> gt 
 nnoremap <S-tab> gT
 
+
+" Movement in insert mode
+inoremap <C-h> <C-o>h
+inoremap <C-j> <C-o>j
+inoremap <C-k> <C-o>k
+inoremap <C-l> <C-o>l
+inoremap <C-w> <C-o>w
+inoremap <C-b> <C-o>b
+
+" Also allow line-wise scrolling
+inoremap <C-e> <C-o><C-e>
+inoremap <C-y> <C-o><C-y>
+
 "   autocmd!
 "   autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
 "   autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
