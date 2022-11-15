@@ -29,8 +29,8 @@ filetype on             " enable filetype detection
 filetype plugin on      " load file-specific plugins
 filetype plugin indent on
 
-autocmd Filetype java source ~/devbith/cursor_output/java/cursor_output.vim
-autocmd Filetype javascript source ~/devbith/cursor_output/javascript/cursor_output.vim
+autocmd Filetype java source ~/thapabishal/cursor_output/java/cursor_output.vim
+autocmd Filetype javascript source ~/thapabishal/cursor_output/javascript/cursor_output.vim
 autocmd Filetype java setlocal syntax=OFF nonumber autoindent
 
 " Java
@@ -58,6 +58,10 @@ inoremap <C-b> <C-o>b
 " Also allow line-wise scrolling
 inoremap <C-e> <C-o><C-e>
 inoremap <C-y> <C-o><C-y>
+
+
+" Digraph remapping 
+inoremap <C-y> <C-k>
 
 "   autocmd!
 "   autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
