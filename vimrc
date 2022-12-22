@@ -31,7 +31,7 @@ filetype plugin indent on
 
 autocmd Filetype java source ~/thapabishal/cursor_output/java/cursor_output.vim
 autocmd Filetype javascript source ~/thapabishal/cursor_output/javascript/cursor_output.vim
-autocmd Filetype java setlocal syntax=OFF nonumber autoindent
+autocmd Filetype java setlocal syntax=ON nonumber autoindent
 
 " Java
 iabbrev sout System.out.println("");<Esc>3h2x

@@ -29,8 +29,6 @@ export EDITOR='vim'
 
 
 # ------------ alias --------------------------------
-alias gs='git status'
-alias gl='git log -n 3'
 alias vi='vim'
 alias ls='ls -lG'
 alias mci="mvn clean install"
