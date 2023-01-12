@@ -27,6 +27,8 @@ Next steps:
 
 #### 4. Install <a href="https://github.com/tmux/tmux/wiki">Tmux</a> 
 - Create symbolic link `ln -s ${path}/dotfiles/tmux.conf ~/.tmux.conf`
+Install Tmux plugin to copy to system clipboard
+- brew install reattach-to-user-namespace
 
 #### 5. Install <a href="https://sdkman.io/install"> SDKMAN </a>
 
