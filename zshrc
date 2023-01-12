@@ -34,6 +34,7 @@ alias ls='ls -lG'
 alias slog="git log --graph --pretty=format:'%C(auto) %h %cr -%d %s %C(cyan)<%an>' --abbrev-commit -n 15"
 alias mci="mvn clean install"
 alias mciskiptest="mvn clean install -Dmaven.test.skip=true"
+alias master="git checkout master"
 
 # Don't add duplicate lines in history
 HISTCONTROL=ignoreboth
