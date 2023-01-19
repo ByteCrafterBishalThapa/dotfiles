@@ -35,6 +35,7 @@ alias slog="git log --graph --pretty=format:'%C(auto) %h %cr -%d %s %C(cyan)<%an
 alias mci="mvn clean install"
 alias mciskiptest="mvn clean install -Dmaven.test.skip=true"
 alias master="git checkout master"
+alias sjava="sdk use java" 
 
 # Don't add duplicate lines in history
 HISTCONTROL=ignoreboth
