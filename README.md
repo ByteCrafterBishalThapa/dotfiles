@@ -5,13 +5,13 @@ This repo contains configuration files. I use it to setup machine.
 ### Clone this repo and follow this instrusctions 
 
 ### 1. Create symbolic link
-- `ln -s ${path}/dotfiles/vimrc ~/.vimrc`
+- `ln -s ${dotfile_path}/dotfiles/vimrc ~/.vimrc`
 
 `${path}` Where this repo is cloned 
 
 
 #### 2. Install <a href="https://ohmyz.sh/#install">Oh My Zsh</a>.
-- Create symbolic link `ln -s ${path}/dotfiles/zshrc ~/.zshrc`
+- Create symbolic link `ln -s ${dotfile_path}/dotfiles/zshrc ~/.zshrc`
 
 `${path}` Where this repo is cloned 
 
@@ -26,7 +26,7 @@ Next steps:
 ```
 
 #### 4. Install <a href="https://github.com/tmux/tmux/wiki">Tmux</a> 
-- Create symbolic link `ln -s ${path}/dotfiles/tmux.conf ~/.tmux.conf`
+- Create symbolic link `ln -s ${dotfile_path}/dotfiles/tmux.conf ~/.tmux.conf`
 Install Tmux plugin to copy to system clipboard
 - brew install reattach-to-user-namespace
 
