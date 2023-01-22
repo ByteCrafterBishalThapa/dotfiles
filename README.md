@@ -7,13 +7,13 @@ This repo contains configuration files. I use it to setup machine.
 ### 1. Create symbolic link
 - `ln -s ${dotfile_path}/dotfiles/vimrc ~/.vimrc`
 
-`${path}` Where this repo is cloned 
+`${dotfile_path}` Where this repo is cloned 
 
 
 #### 2. Install <a href="https://ohmyz.sh/#install">Oh My Zsh</a>.
 - Create symbolic link `ln -s ${dotfile_path}/dotfiles/zshrc ~/.zshrc`
 
-`${path}` Where this repo is cloned 
+`${dotfile_path}` Where this repo is cloned 
 
 #### 3. Install <a href="https://brew.sh/"> HomeBrew </a>.
 - Follow the last instruction of the instllation. Should be something like below. Don't copy just follow instruction)
