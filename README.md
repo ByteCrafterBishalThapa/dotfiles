@@ -4,10 +4,18 @@ This repo contains configuration files. I use it to setup machine.
 
 ### Clone this repo and follow this instrusctions 
 
-### 1. Create symbolic link
+### 1. Setup <a href="https://www.vim.org/">Vim</a>
 - `ln -s ${dotfile_path}/dotfiles/vimrc ~/.vimrc`
 
 `${dotfile_path}` Where this repo is cloned 
+
+- Install <a href="https://github.com/junegunn/vim-plug">vim-plug</a>
+ ```
+ curl -fLo ~/.vim/autoload/plug.vim --create-dirs 
+ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+ 
+ :PlugInstall
+```
 
 
 #### 2. Install <a href="https://ohmyz.sh/#install">Oh My Zsh</a>.
