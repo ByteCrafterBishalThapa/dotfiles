@@ -10,11 +10,15 @@ This repo contains configuration files. I use it to setup machine.
 `${dotfile_path}` Where this repo is cloned 
 
 - Install <a href="https://github.com/junegunn/vim-plug">vim-plug</a>
+
+1.  Install the vim-plug
  ```
  curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
- 
- :PlugInstall
-```
+ ```
+
+2. Open Vim on your terminal and type to install the plugin mentioned in the ~/.vimrc
+``:PlugInstall``
+
 
 
 #### 2. Install <a href="https://ohmyz.sh/#install">Oh My Zsh</a>.
