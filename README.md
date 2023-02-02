@@ -11,8 +11,7 @@ This repo contains configuration files. I use it to setup machine.
 
 - Install <a href="https://github.com/junegunn/vim-plug">vim-plug</a>
  ```
- curl -fLo ~/.vim/autoload/plug.vim --create-dirs 
- https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
  
  :PlugInstall
 ```
