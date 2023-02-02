@@ -17,6 +17,7 @@ set timeoutlen=1000 ttimeoutlen=0     " Remove timeout when hitting escape
 set number ruler                      " Display line number
 set ts=2 sts=2 sw=2 expandtab         " Set tab character to four space http://vimcasts.org/episodes/tabs-and-spaces/
 set backspace=2   		                " Backspace deletes like most programs in insert mode
+set noshowmode                        " Hide mode status
 " ----------------------
 " Open new split panes to right and bottom, which feels more natural than Vim’s default
 set splitbelow
@@ -62,6 +63,16 @@ inoremap <C-y> <C-o><C-y>
 
 " Digraph remapping 
 inoremap <C-y> <C-k>
+
+
+" Vim Plugin
+
+call plug#begin()
+Plug 'preservim/NERDTree'
+Plug 'vim-airline/vim-airline'
+Plug 'https://github.com/ap/vim-css-color'
+Plug 'https://github.com/tpope/vim-surround'
+call plug#end()
 
 "   autocmd!
 "   autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
