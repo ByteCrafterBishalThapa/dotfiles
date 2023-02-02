@@ -11,12 +11,12 @@ This repo contains configuration files. I use it to setup machine.
 
 - Install <a href="https://github.com/junegunn/vim-plug">vim-plug</a>
 
-1.  Install the vim-plug
+Install the vim-plug
  ```
  curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
  ```
 
-2. Open Vim on your terminal and type to install the plugin mentioned in the ~/.vimrc
+Open Vim on your terminal and type to install the plugin mentioned in the ~/.vimrc
 ``:PlugInstall``
 
 
