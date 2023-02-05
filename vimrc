@@ -17,6 +17,7 @@ set ts=2 sts=2 sw=2 expandtab         " Set tab character to four space http://v
 set backspace=2   		                " Backspace deletes like most programs in insert mode
 set noshowmode                        " Hide mode status
 set t_Co=256                          " Set terminal color
+set background=dark                   " 
 " ----------------------
 " Open new split panes to right and bottom, which feels more natural than Vim’s default
 set splitbelow

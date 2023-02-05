@@ -26,7 +26,7 @@ ZSH_THEME_GIT_PROMPT_DIRTY="${FG[214]}*%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="${FG[075]})%{$reset_color%}"
 # --------------------------------------------------
 export EDITOR='vim'
-
+export TERM=xterm-256color
 
 # ------------ alias --------------------------------
 alias vi='vim'
@@ -42,8 +42,6 @@ HISTCONTROL=ignoreboth
 
 # Set history fromat to include timestaps
 HISTTIMEFORMAT="%Y-%m-%d %T "
-
-export TERM=xterm-color
 
 vim() {
   if [ $# -eq 0 ]; then
