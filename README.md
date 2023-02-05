@@ -9,16 +9,16 @@ This repo contains configuration files. I use it to setup machine.
 
 `${dotfile_path}` Where this repo is cloned 
 
-- Install <a href="https://github.com/junegunn/vim-plug">vim-plug</a>
+- Install the vim plugin manager <a href="https://github.com/junegunn/vim-plug">Vundle</a>
 
-Install the vim-plug
  ```
- curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
  ```
 
 Open Vim on your terminal and type to install the plugin mentioned in the ~/.vimrc
 ``:PlugInstall``
 
+- Install <a href="https://github.com/powerline/fonts">Powerline fonts </a>
 
 
 #### 2. Install <a href="https://ohmyz.sh/#install">Oh My Zsh</a>.
