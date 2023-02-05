@@ -17,7 +17,6 @@ set ts=2 sts=2 sw=2 expandtab         " Set tab character to four space http://v
 set backspace=2   		                " Backspace deletes like most programs in insert mode
 set noshowmode                        " Hide mode status
 set t_Co=256                          " Set terminal color
-set term=xterm-color
 " ----------------------
 " Open new split panes to right and bottom, which feels more natural than Vim’s default
 set splitbelow
@@ -92,9 +91,11 @@ Plugin 'https://github.com/tpope/vim-surround'
 Plugin 'preservim/nerdtree'
 call vundle#end()
 
-" Vim Airline Themes
-let g:airline_themes='dark_minimal'
+" Airline
+let g:airline_powerline_fonts = 1
+let g:airline_theme='dark_minimal'
 
 " Netrw
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
+
