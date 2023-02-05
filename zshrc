@@ -43,11 +43,17 @@ HISTCONTROL=ignoreboth
 # Set history fromat to include timestaps
 HISTTIMEFORMAT="%Y-%m-%d %T "
 
-
 export TERM=xterm-color
 
-[[ -s "$HOME/.zsh_profile" ]] && source "$HOME/.zsh_profile"
+vim() {
+  if [ $# -eq 0 ]; then
+    /usr/bin/vim ./
+  else
+    /usr/bin/vim "$@"
+  fi
+}
 
+[[ -s "$HOME/.zsh_profile" ]] && source "$HOME/.zsh_profile"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"

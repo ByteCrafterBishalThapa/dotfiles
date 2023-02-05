@@ -1,12 +1,10 @@
-" ----------------------
 " Vim settings
+set nocompatible                      " Use VIM settings rather than Vi settings;
 " ----------------------
-
 let g:loaded_matchparen=1						  " Disable matching parenthesis hightlightg	
 
 syntax on
 highlight Comment ctermfg=lightblue
-set nocompatible 
 set showcmd                           " Show size of visual selection
 set nowrap                            " Don't wrap long lines
 set wildmenu                          " Tab autocomplete in command mode
@@ -18,11 +16,25 @@ set number ruler                      " Display line number
 set ts=2 sts=2 sw=2 expandtab         " Set tab character to four space http://vimcasts.org/episodes/tabs-and-spaces/
 set backspace=2   		                " Backspace deletes like most programs in insert mode
 set noshowmode                        " Hide mode status
+set t_Co=256                          " Set terminal color
+set term=xterm-color
 " ----------------------
 " Open new split panes to right and bottom, which feels more natural than Vim’s default
 set splitbelow
 set splitright
+
 " ----------------------
+" Split Horizontal by C+w _ and Vertical with C+w | 
+nnoremap <C-w>_ <C-w>s
+nnoremap <C-w>\| <C-W>v
+
+" ----------------------
+" Make adjusting split size bit eaiser
+noremap <C-w><Left> :vertical resize +3<CR>
+noremap <C-w><Right> :vertical resize -3<CR>
+noremap <C-w><Up> :resize +3<CR>
+noremap <C-w><Down> :resize -3<CR>
+
 
 " ----------------------
 " Enable filetype plugin when a file is edited its plugin file is loaded (if there is one for the detected filetype).
@@ -60,21 +72,29 @@ inoremap <C-b> <C-o>b
 inoremap <C-e> <C-o><C-e>
 inoremap <C-y> <C-o><C-y>
 
-
 " Digraph remapping 
 inoremap <C-y> <C-k>
+    
+" Split border style
+highlight VertSplit cterm=none gui=none
 
 
-" Vim Plugin
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
 
-call plug#begin()
-Plug 'preservim/NERDTree'
-Plug 'vim-airline/vim-airline'
-Plug 'https://github.com/ap/vim-css-color'
-Plug 'https://github.com/tpope/vim-surround'
-call plug#end()
+call vundle#begin()
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'https://github.com/ap/vim-css-color'
+Plugin 'https://github.com/tpope/vim-surround'
+Plugin 'preservim/nerdtree'
+call vundle#end()
 
-"   autocmd!
-"   autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
-"   autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
-" augroup END
+" Vim Airline Themes
+let g:airline_themes='dark_minimal'
+
+" Netrw
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
