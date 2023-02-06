@@ -2,6 +2,20 @@
 set nocompatible                      " Use VIM settings rather than Vi settings;
 " ----------------------
 let g:loaded_matchparen=1						  " Disable matching parenthesis hightlightg	
+let mapleader = " "                   " map leader to Space
+map <leader>h :noh<CR>
+
+" --------------------------------
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set norelativenumber
+  else
+    set relativenumber
+  endif
+endfunc
+
+nnoremap <leader>ln :call NumberToggle()<cr>
+" --------------------------------
 
 syntax on
 highlight Comment ctermfg=lightblue
@@ -18,6 +32,7 @@ set backspace=2   		                " Backspace deletes like most programs in in
 set noshowmode                        " Hide mode status
 set t_Co=256                          " Set terminal color
 set background=dark                   " 
+set number relativenumber
 " ----------------------
 " Open new split panes to right and bottom, which feels more natural than Vim’s default
 set splitbelow
