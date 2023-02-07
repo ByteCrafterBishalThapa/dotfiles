@@ -17,8 +17,9 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-PROMPT="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
-PROMPT+='%{$fg[white]%}%~%{$reset_color%}$(git_prompt_info) $ '
+PROMPT='%{$fg[white]%}%~%{$reset_color%}$(git_prompt_info)'
+PROMPT+=" %(?:%{$fg_bold[green]%}$ :%{$fg_bold[red]%}$ )%{$reset_color%}"
+
 # git settings
 ZSH_THEME_GIT_PROMPT_PREFIX=" ${FG[075]}(${FG[078]}"
 ZSH_THEME_GIT_PROMPT_CLEAN=""

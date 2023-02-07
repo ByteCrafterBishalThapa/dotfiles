@@ -1,11 +1,46 @@
-" Vim settings
 set nocompatible                      " Use VIM settings rather than Vi settings;
+
 " ----------------------
 let g:loaded_matchparen=1						  " Disable matching parenthesis hightlightg	
-let mapleader = " "                   " map leader to Space
-map <leader>h :noh<CR>
 
-" --------------------------------
+
+let mapleader = " "                   " Map leader to Space
+map <leader>nh :noh<CR>
+map <leader>s :w<CR>
+map <leader>q :q<CR>
+
+" move current line down
+nnoremap <C-j> :m +1<CR>
+nnoremap <C-k> :m -2<CR>
+inoremap <C-j> <Esc>:m +1<CR>gi
+inoremap <C-k> <Esc>:m -2<CR>gi
+
+nmap <S-Enter> O<Esc>
+nmap <CR> o<Esc>
+
+
+" system clipboard
+vmap <leader>y "+y
+vmap <leader>d "+d
+nmap <leader>y "+yy
+nmap <leader>p "+p
+nmap <leader>P "+P
+vmap <leader>p "+p
+vmap <leader>P "+P
+
+" scrolling
+nmap <leader>d <C-d>
+nmap <leader>u <C-u>
+vmap <leader>d <C-d>
+vmap <leader>u <C-u>
+
+" toggles spell checking
+nmap <leader>tsc :set spell! spelllang=en_us<CR>
+" toggles word wrap
+nmap <leader>wl :set wrap! linebreak<CR>
+" -------------------------------
+nnoremap <leader>tr :call NumberToggle()<cr>
+
 function! NumberToggle()
   if(&relativenumber == 1)
     set norelativenumber
@@ -14,11 +49,11 @@ function! NumberToggle()
   endif
 endfunc
 
-nnoremap <leader>ln :call NumberToggle()<cr>
 " --------------------------------
 
 syntax on
 highlight Comment ctermfg=lightblue
+set title                            " Show title
 set showcmd                           " Show size of visual selection
 set nowrap                            " Don't wrap long lines
 set wildmenu                          " Tab autocomplete in command mode
@@ -70,6 +105,10 @@ iabbrev psvm public static void main(String[] args) {<CR>}<esc>O
 " map <M-f> gt
 " map <M-b> gT
 
+" Use a line cursor within insert mode and a block cursor everywhere else.
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
+
 nnoremap <tab> gt 
 nnoremap <S-tab> gT
 
@@ -91,7 +130,7 @@ inoremap <C-y> <C-k>
     
 " Split border style
 highlight VertSplit cterm=none gui=none
-
+highlight LineNr ctermfg=grey
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -99,8 +138,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+" Plugin 'vim-airline/vim-airline'
+" Plugin 'vim-airline/vim-airline-themes'
 Plugin 'https://github.com/ap/vim-css-color'
 Plugin 'https://github.com/tpope/vim-surround'
 Plugin 'preservim/nerdtree'
@@ -108,9 +147,9 @@ call vundle#end()
 
 " Airline
 let g:airline_powerline_fonts = 1
-let g:airline_theme='dark_minimal'
+let g:airline_theme='minimalist'
+let g:airline_section_z = ''
 
 " Netrw
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
-
