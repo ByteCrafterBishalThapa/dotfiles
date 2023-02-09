@@ -37,20 +37,23 @@ alias mci="mvn clean install"
 alias mciskiptest="mvn clean install -Dmaven.test.skip=true"
 alias master="git checkout master"
 alias sjava="sdk use java" 
-
+alias evimconfig="vim ~/.vimrc"
+alias ezshconfig="vim ~/.zshrc"
+alias tree2="tree -L 2"
+alias tree3="tree -L 3"
 # Don't add duplicate lines in history
 HISTCONTROL=ignoreboth
 
 # Set history fromat to include timestaps
 HISTTIMEFORMAT="%Y-%m-%d %T "
 
-vim() {
-  if [ $# -eq 0 ]; then
-    /usr/bin/vim ./
-  else
-    /usr/bin/vim "$@"
-  fi
-}
+#vim() {
+#  if [ $# -eq 0 ]; then
+#    /usr/bin/vim ./
+#  else
+#    /usr/bin/vim "$@"
+#  fi
+#}
 
 [[ -s "$HOME/.zsh_profile" ]] && source "$HOME/.zsh_profile"
 

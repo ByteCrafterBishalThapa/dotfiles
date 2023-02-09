@@ -1,13 +1,24 @@
 set nocompatible                      " Use VIM settings rather than Vi settings;
 
+set mouse=a                           " Mouse mode one (Sometime usefull) 
+
+set path+=**
+" command! MakeTags !ctags -R  --exclude=.git --exclude=.idea --exclude=node_modules --exclude='*.class' .
 " ----------------------
 let g:loaded_matchparen=1						  " Disable matching parenthesis hightlightg	
 
-
 let mapleader = " "                   " Map leader to Space
-map <leader>nh :noh<CR>
+map <leader>th :set hlsearch!<CR>
 map <leader>s :w<CR>
 map <leader>q :q<CR>
+map <leader>fq :q!<CR>
+
+" searching file under current and sub-directories
+nmap <leader>f :find<space>
+
+" switch between tabs
+nnoremap <leader>l gt 
+nnoremap <leader>h gT
 
 " move current line down
 nnoremap <C-j> :m +1<CR>
@@ -17,7 +28,6 @@ inoremap <C-k> <Esc>:m -2<CR>gi
 
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
-
 
 " system clipboard
 vmap <leader>y "+y
@@ -37,7 +47,7 @@ vmap <leader>u <C-u>
 " toggles spell checking
 nmap <leader>tsc :set spell! spelllang=en_us<CR>
 " toggles word wrap
-nmap <leader>wl :set wrap! linebreak<CR>
+nmap <leader>tw :set wrap! linebreak<CR>
 " -------------------------------
 nnoremap <leader>tr :call NumberToggle()<cr>
 
@@ -57,17 +67,18 @@ set title                            " Show title
 set showcmd                           " Show size of visual selection
 set nowrap                            " Don't wrap long lines
 set wildmenu                          " Tab autocomplete in command mode
-set hlsearch                          " Highlight search results
+set nohlsearch                          " Highlight search results
 set ignorecase smartcase              " Search queries intelligently set case
 set incsearch                         " Show search results as you type
 set timeoutlen=1000 ttimeoutlen=0     " Remove timeout when hitting escape
 set number ruler                      " Display line number
 set ts=2 sts=2 sw=2 expandtab         " Set tab character to four space http://vimcasts.org/episodes/tabs-and-spaces/
 set backspace=2   		                " Backspace deletes like most programs in insert mode
-set noshowmode                        " Hide mode status
+" Hide mode status
+" set noshowmode                        
+set relativenumber
 set t_Co=256                          " Set terminal color
 set background=dark                   " 
-set number relativenumber
 " ----------------------
 " Open new split panes to right and bottom, which feels more natural than Vim’s default
 set splitbelow
@@ -108,9 +119,6 @@ iabbrev psvm public static void main(String[] args) {<CR>}<esc>O
 " Use a line cursor within insert mode and a block cursor everywhere else.
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
-
-nnoremap <tab> gt 
-nnoremap <S-tab> gT
 
 
 " Movement in insert mode
@@ -153,3 +161,5 @@ let g:airline_section_z = ''
 " Netrw
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
+
+nmap <leader>m :NERDTreeToggle<CR>
