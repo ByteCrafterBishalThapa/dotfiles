@@ -21,3 +21,4 @@ file=/tmp/tmp.html
 asciidoctor $input -a source-highlighter=coderay -o $file &> /dev/null
 open $file &> /dev/null &
 
+# source: https://github.com/sdaschner/dotfiles/tree/master/bin
