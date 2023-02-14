@@ -1,0 +1,9 @@
+.Some more steps
+- Append `bin` folder in the PATH
+
+  export PATH="$HOME/thapabishal/dotfiles/bin:$PATH"
+
+- Configure Git To use Vimdiff
+
+ git config --global diff.tool vimdiff
+ git config --global merge.tool vimdiff

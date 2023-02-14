@@ -1,5 +1,3 @@
-set nocompatible                      " Use VIM settings rather than Vi settings;
-
 set mouse=a                           " Mouse mode one (Sometime usefull) 
 
 set path+=**
@@ -20,11 +18,6 @@ nmap <leader>f :find<space>
 nnoremap <leader>l gt 
 nnoremap <leader>h gT
 
-" move current line down
-nnoremap <C-j> :m +1<CR>
-nnoremap <C-k> :m -2<CR>
-inoremap <C-j> <Esc>:m +1<CR>gi
-inoremap <C-k> <Esc>:m -2<CR>gi
 
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
@@ -37,6 +30,9 @@ nmap <leader>p "+p
 nmap <leader>P "+P
 vmap <leader>p "+p
 vmap <leader>P "+P
+
+" execute command
+nmap <leader>ec !!zsh<CR>
 
 " scrolling
 nmap <leader>d <C-d>
@@ -63,11 +59,11 @@ endfunc
 
 syntax on
 highlight Comment ctermfg=lightblue
-set title                            " Show title
+set title                             " Show title
 set showcmd                           " Show size of visual selection
 set nowrap                            " Don't wrap long lines
 set wildmenu                          " Tab autocomplete in command mode
-set nohlsearch                          " Highlight search results
+set nohlsearch                        " Highlight search results
 set ignorecase smartcase              " Search queries intelligently set case
 set incsearch                         " Show search results as you type
 set timeoutlen=1000 ttimeoutlen=0     " Remove timeout when hitting escape
@@ -78,7 +74,8 @@ set backspace=2   		                " Backspace deletes like most programs in in
 " set noshowmode                        
 set relativenumber
 set t_Co=256                          " Set terminal color
-set background=dark                   " 
+set background=dark                   " no comment 
+set noro                              " By default, vimdiff opens file in readonly mode, this enables editing
 " ----------------------
 " Open new split panes to right and bottom, which feels more natural than Vim’s default
 set splitbelow
@@ -120,21 +117,10 @@ iabbrev psvm public static void main(String[] args) {<CR>}<esc>O
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
 
-
-" Movement in insert mode
-inoremap <C-h> <C-o>h
-inoremap <C-j> <C-o>j
-inoremap <C-k> <C-o>k
-inoremap <C-l> <C-o>l
-inoremap <C-w> <C-o>w
-inoremap <C-b> <C-o>b
-
 " Also allow line-wise scrolling
 inoremap <C-e> <C-o><C-e>
 inoremap <C-y> <C-o><C-y>
 
-" Digraph remapping 
-inoremap <C-y> <C-k>
     
 " Split border style
 highlight VertSplit cterm=none gui=none
@@ -162,4 +148,9 @@ let g:airline_section_z = ''
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 
+
 nmap <leader>m :NERDTreeToggle<CR>
+
+" AsciiDoc preview
+nmap <leader>av :w !asciidoc-view -<CR><CR>
+

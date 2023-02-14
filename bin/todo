@@ -1,0 +1,8 @@
+#!/bin/bash
+set -eu
+
+new_todo=$1
+echo "- $(date +'%Y-%m-%d'): $new_todo" >> ~/.todos.adoc
+echo "Added ✓ "
+
+
