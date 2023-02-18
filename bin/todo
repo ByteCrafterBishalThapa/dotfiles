@@ -1,8 +1,10 @@
 #!/bin/bash
 set -eu
 
-new_todo=$1
+# Doesn't work properly if "$*" isn't quoted, $* sees all arguments as single word
+new_todo="$*"  
+
 echo "- $(date +'%Y-%m-%d'): $new_todo" >> ~/.todos.adoc
-echo "Added ✓ "
+echo "Added: $new_todo  ✓"
 
 

@@ -32,6 +32,7 @@ export TERM=xterm-256color
 # ------------ alias --------------------------------
 alias vi='vim'
 alias ls='ls -lG'
+alias gs='git status'
 alias slog="git log --graph --pretty=format:'%C(auto) %h %cr -%d %s %C(cyan)<%an>' --abbrev-commit -n 15"
 alias mci="mvn clean install"
 alias mciskiptest="mvn clean install -Dmaven.test.skip=true"
@@ -39,6 +40,8 @@ alias master="git checkout master"
 alias sjava="sdk use java" 
 alias evimconfig="vim ~/.vimrc"
 alias ezshconfig="vim ~/.zshrc"
+alias st="cat ~/.todos.adoc"
+alias et="vim ~/.todos.adoc"
 alias tree2="tree -L 2"
 alias tree3="tree -L 3"
 # Don't add duplicate lines in history

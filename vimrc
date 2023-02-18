@@ -8,8 +8,9 @@ let g:loaded_matchparen=1						  " Disable matching parenthesis hightlightg
 let mapleader = " "                   " Map leader to Space
 map <leader>th :set hlsearch!<CR>
 map <leader>s :w<CR>
-map <leader>q :q<CR>
-map <leader>fq :q!<CR>
+map <leader>qq :q<CR>
+map <leader>qa :qa<CR>
+map <leader>qf :q!<CR>
 
 " searching file under current and sub-directories
 nmap <leader>f :find<space>
@@ -154,3 +155,7 @@ nmap <leader>m :NERDTreeToggle<CR>
 " AsciiDoc preview
 nmap <leader>av :w !asciidoc-view -<CR><CR>
 
+
+" presentation mode
+" noremap <Left> :silent bp<CR> :redraw!<CR>
+" noremap <Right> :silent bn<CR> :redraw!<CR>
