@@ -7,3 +7,7 @@
 
  git config --global diff.tool vimdiff
  git config --global merge.tool vimdiff
+
+- Install AsciDoc
+
+ brew install asciidoctor
