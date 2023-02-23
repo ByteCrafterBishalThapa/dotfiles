@@ -151,6 +151,7 @@ let g:netrw_liststyle = 3
 
 
 nmap <leader>m :NERDTreeToggle<CR>
+nmap <leader>mm :NERDTreeFind<CR>
 
 " AsciiDoc preview
 nmap <leader>av :w !asciidoc-view -<CR><CR>
