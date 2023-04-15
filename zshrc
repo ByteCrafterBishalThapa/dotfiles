@@ -44,8 +44,11 @@ alias st="cat ~/.todos.adoc"
 alias et="vim ~/.todos.adoc"
 alias tree2="tree -L 2"
 alias tree3="tree -L 3"
-# Don't add duplicate lines in history
-HISTCONTROL=ignoreboth
+# Save bash history to a file
+HISTSIZE=100000
+HISTFILESIZE=200000
+HISTCONTROL=ignoredups:ignorespace
+HISTFILE=~/.bash_history
 
 # Set history fromat to include timestaps
 HISTTIMEFORMAT="%Y-%m-%d %T "
