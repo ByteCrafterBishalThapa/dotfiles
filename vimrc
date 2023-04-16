@@ -1,29 +1,32 @@
-set mouse=a                           " Mouse mode one (Sometime usefull) 
-
-set path+=**
-" command! MakeTags !ctags -R  --exclude=.git --exclude=.idea --exclude=node_modules --exclude='*.class' .
-" ----------------------
-let g:loaded_matchparen=1						  " Disable matching parenthesis hightlightg	
+" ---------------------- Vim Improved Config --------------------------------
 
 let mapleader = " "                   " Map leader to Space
-map <leader>th :set hlsearch!<CR>
+let g:loaded_matchparen=1						  " Disable matching parenthesis hightlightg	
+
+" ----------------------------------------------------------------------------------------------------
+
+" command! MakeTags !ctags -R  --exclude=.git --exclude=.idea --exclude=node_modules --exclude='*.class' .
+
+
+" ----------------------------------------------------------------------------------------------------
 map <leader>s :w<CR>
 map <leader>qq :q<CR>
 map <leader>qa :qa<CR>
 map <leader>qf :q!<CR>
 
-" searching file under current and sub-directories
 nmap <leader>f :find<space>
+map <leader>th :set hlsearch!<CR>
 
-" switch between tabs
-nnoremap <leader>l gt 
+nnoremap <leader>l gt
 nnoremap <leader>h gT
 
 
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
 
-" system clipboard
+" ----------------------------------------------------------------------------------------------------
+" System clipboard copy pasting
+vmap <leader>y "+y
 vmap <leader>y "+y
 vmap <leader>d "+d
 nmap <leader>y "+yy
@@ -35,26 +38,24 @@ nnoremap p "+p
 vnoremap p "+p
 nnoremap y "+y<CR>
 vnoremap y "+y<CR>
-
-" execute command
+noremap d "+d
+vnoremap d "+d
+nnoremap dd "+dd
+" ----------------------------------------------------------------------------------------------------
 nmap <leader>ec !!zsh<CR>
-
-" refresh vimrc config
 nmap <leader>rc :source ~/.vimrc<CR>
 
-" scrolling
+" Scrolling Up and Down
 nmap <leader>d <C-d>
 nmap <leader>u <C-u>
 vmap <leader>d <C-d>
 vmap <leader>u <C-u>
 
-" toggles spell checking
+" Toggling whitespace
 nmap <leader>tsc :set spell! spelllang=en_us<CR>
-set spellfile=~/thapabishal/dotfiles/vim/spell/en.utf-8.add
-
-" toggles word wrap
 nmap <leader>tw :set wrap! linebreak<CR>
-" -------------------------------
+
+" --------------------------------------------------------------------------------------------------
 nnoremap <leader>tr :call NumberToggle()<cr>
 
 function! NumberToggle()
@@ -65,11 +66,14 @@ function! NumberToggle()
   endif
 endfunc
 
-" --------------------------------
-
+" ----------------------------------------------------------------------------------------------------
 syntax on
 highlight Comment ctermfg=lightblue
-"set title                             " Show title
+
+" ----------------------------------------------------------------------------------------------------
+set title                             " Show title
+set mouse=a                           " Enables mouse support in Vim
+set path+=**                          " Adds all subdirectories to the path
 set showcmd                           " Show size of visual selection
 set showmatch                         " Show matching braces
 set nowrap                            " Don't wrap long lines
@@ -87,17 +91,22 @@ set relativenumber
 set t_Co=256                          " Set terminal color
 set background=dark                   " no comment 
 set noro                              " By default, vimdiff opens file in readonly mode, this enables editing
-" ----------------------
+
+" ----------------------------------------------------------------------------------------------------
+"  Highlight any text that exceeds 140 characters with a red background and white text.
+highlight ErrorLine ctermbg=red ctermfg=white guibg=red guifg=white
+match ErrorLine /\%>140v.\+/
+" ----------------------------------------------------------------------------------------------------
+
 " Open new split panes to right and bottom, which feels more natural than Vim’s default
 set splitbelow
 set splitright
-
-" ----------------------
+" ----------------------------------------------------------------------------------------------------
 " Split Horizontal by C+w _ and Vertical with C+w | 
 nnoremap <C-w>_ <C-w>s
 nnoremap <C-w>\| <C-W>v
 
-" ----------------------
+" ----------------------------------------------------------------------------------------------------
 " Make adjusting split size bit eaiser
 noremap <C-w><Left> :vertical resize +3<CR>
 noremap <C-w><Right> :vertical resize -3<CR>
@@ -105,7 +114,7 @@ noremap <C-w><Up> :resize +3<CR>
 noremap <C-w><Down> :resize -3<CR>
 
 
-" ----------------------
+" ----------------------------------------------------------------------------------------------------
 " Enable filetype plugin when a file is edited its plugin file is loaded (if there is one for the detected filetype).
 filetype on             " enable filetype detection
 filetype plugin on      " load file-specific plugins
