@@ -18,3 +18,4 @@ map <leader>b <Action>(ToggleLineBreakpoint)
 
 map <leader>ff <Action>(SearchEverywhere)
 :map <leader>m <Action>(ActivateProjectToolWindow)
+map gf <Action>(GotoDeclaration)

@@ -1,3 +1,4 @@
+
 " ---------------------- Vim Improved Config --------------------------------
 
 let mapleader = " "                   " Map leader to Space
@@ -20,6 +21,8 @@ map <leader>th :set hlsearch!<CR>
 nnoremap <leader>l gt
 nnoremap <leader>h gT
 
+nnoremap <Leader>[ :bp<CR>
+nnoremap <Leader>] :bn<CR>
 
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
@@ -34,10 +37,6 @@ nmap <leader>p "+p
 nmap <leader>P "+P
 vmap <leader>p "+p
 vmap <leader>P "+P
-nnoremap p "+p
-vnoremap p "+p
-nnoremap y "+y<CR>
-vnoremap y "+y<CR>
 noremap d "+d
 vnoremap d "+d
 nnoremap dd "+dd
@@ -91,7 +90,7 @@ set relativenumber
 set t_Co=256                          " Set terminal color
 set background=dark                   " no comment 
 set noro                              " By default, vimdiff opens file in readonly mode, this enables editing
-
+set textwidth=140
 " ----------------------------------------------------------------------------------------------------
 "  Highlight any text that exceeds 140 characters with a red background and white text.
 highlight ErrorLine ctermbg=red ctermfg=white guibg=red guifg=white
@@ -184,6 +183,3 @@ nmap <leader>av :w !asciidoc-view -<CR><CR>
 " presentation mode
 " noremap <Left> :silent bp<CR> :redraw!<CR>
 " noremap <Right> :silent bn<CR> :redraw!<CR>
-"
-
-
