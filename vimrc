@@ -8,7 +8,6 @@ let g:loaded_matchparen=1						  " Disable matching parenthesis hightlightg
 
 " command! MakeTags !ctags -R  --exclude=.git --exclude=.idea --exclude=node_modules --exclude='*.class' .
 
-
 " ----------------------------------------------------------------------------------------------------
 map <leader>s :w<CR>
 map <leader>qq :q<CR>
@@ -55,15 +54,8 @@ nmap <leader>tsc :set spell! spelllang=en_us<CR>
 nmap <leader>tw :set wrap! linebreak<CR>
 
 " --------------------------------------------------------------------------------------------------
-nnoremap <leader>tr :call NumberToggle()<cr>
-
-function! NumberToggle()
-  if(&relativenumber == 1)
-    set norelativenumber
-  else
-    set relativenumber
-  endif
-endfunc
+" Toggle relative number with <leader>tr
+nnoremap <silent> <leader>tr :set relativenumber!<CR>
 
 " ----------------------------------------------------------------------------------------------------
 syntax on
@@ -73,7 +65,7 @@ highlight Comment ctermfg=lightblue
 set title                             " Show title
 set mouse=a                           " Enables mouse support in Vim
 set path+=**                          " Adds all subdirectories to the path
-set showcmd                           " Show size of visual selection
+" set showcmd                           " Show size of visual selection
 set showmatch                         " Show matching braces
 set nowrap                            " Don't wrap long lines
 set wildmenu                          " Tab autocomplete in command mode
@@ -85,7 +77,7 @@ set number ruler                      " Display line number
 set ts=2 sts=2 sw=2 expandtab         " Set tab character to four space http://vimcasts.org/episodes/tabs-and-spaces/
 set backspace=2   		                " Backspace deletes like most programs in insert mode
 " Hide mode status
-" set noshowmode                        
+set noshowmode
 set relativenumber
 set t_Co=256                          " Set terminal color
 set background=dark                   " no comment 
@@ -93,8 +85,8 @@ set noro                              " By default, vimdiff opens file in readon
 set textwidth=140
 " ----------------------------------------------------------------------------------------------------
 "  Highlight any text that exceeds 140 characters with a red background and white text.
-highlight ErrorLine ctermbg=red ctermfg=white guibg=red guifg=white
-match ErrorLine /\%>140v.\+/
+ highlight ErrorLine ctermbg=black ctermfg=red 
+ match ErrorLine /\%>140v.\+/
 " ----------------------------------------------------------------------------------------------------
 
 " Open new split panes to right and bottom, which feels more natural than Vim’s default
@@ -123,9 +115,13 @@ autocmd Filetype java source ~/thapabishal/cursor_output/java/cursor_output.vim
 autocmd Filetype javascript source ~/thapabishal/cursor_output/javascript/cursor_output.vim
 autocmd FileType asciidoc setlocal spell spelllang=en_us
 
+" Define abbreviation for Java files
+autocmd FileType java :abbr sout System.out.println("");<Esc>3h2x
+autocmd FileType java :abbr psvm public static void main(String[] args) {<CR>}<Esc>ko
+
 " Java
-iabbrev sout System.out.println("");<Esc>3h2x
-iabbrev psvm public static void main(String[] args) {<CR>}<esc>O
+"iabbrev sout System.out.println("");<Esc>3h2x
+"iabbrev psvm public static void main(String[] args) {<CR>}<esc>O
 
 au BufNewFile,BufRead *.java setlocal syntax=OFF
 
