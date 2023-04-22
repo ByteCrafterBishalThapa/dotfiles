@@ -45,4 +45,6 @@ Install Tmux plugin to copy to system clipboard
 
 #### 6. Install `brew install ruby`
 - Follow the last instruction put the system variable in  `~/.zsh_profile`
-  
+ 
+
+### <a href="notes.adoc">MORE</a> 

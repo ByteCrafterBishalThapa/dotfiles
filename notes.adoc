@@ -8,6 +8,12 @@
  git config --global diff.tool vimdiff
  git config --global merge.tool vimdiff
 
+- Configure global gitignore 
+
+  ln -s ${dotfile_path}/dotfiles/gitignore ~/.gitignore
+
+  git config --global core.excludesfile ~/.gitignore
+
 - Install AsciDoc
 
  brew install asciidoctor
