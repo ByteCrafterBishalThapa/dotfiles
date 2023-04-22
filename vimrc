@@ -1,5 +1,5 @@
 
-" ---------------------- Vim Improved Config --------------------------------
+" " ---------------------- Vim Improved Config --------------------------------
 
 let mapleader = " "                   " Map leader to Space
 let g:loaded_matchparen=1						  " Disable matching parenthesis hightlightg	
@@ -65,7 +65,7 @@ highlight Comment ctermfg=lightblue
 set title                             " Show title
 set mouse=a                           " Enables mouse support in Vim
 set path+=**                          " Adds all subdirectories to the path
-" set showcmd                           " Show size of visual selection
+set showcmd                           " Show size of visual selection
 set showmatch                         " Show matching braces
 set nowrap                            " Don't wrap long lines
 set wildmenu                          " Tab autocomplete in command mode
@@ -154,6 +154,7 @@ Plugin 'VundleVim/Vundle.vim'
 "Plugin 'vim-airline/vim-airline-themes'
 Plugin 'https://github.com/ap/vim-css-color'
 Plugin 'https://github.com/tpope/vim-surround'
+Plugin 'https://github.com/tpope/vim-commentary'
 Plugin 'preservim/nerdtree'
 call vundle#end()
 
