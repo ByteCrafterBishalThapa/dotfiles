@@ -36,9 +36,6 @@ nmap <leader>p "+p
 nmap <leader>P "+P
 vmap <leader>p "+p
 vmap <leader>P "+P
-noremap d "+d
-vnoremap d "+d
-nnoremap dd "+dd
 " ----------------------------------------------------------------------------------------------------
 nmap <leader>ec !!zsh<CR>
 nmap <leader>rc :source ~/.vimrc<CR>
@@ -150,12 +147,12 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-"Plugin 'vim-airline/vim-airline'
-"Plugin 'vim-airline/vim-airline-themes'
 Plugin 'https://github.com/ap/vim-css-color'
 Plugin 'https://github.com/tpope/vim-surround'
 Plugin 'https://github.com/tpope/vim-commentary'
+Plugin 'https://github.com/vim-scripts/ReplaceWithRegister'
 Plugin 'preservim/nerdtree'
+Plugin 'michaeljsmith/vim-indent-object'
 call vundle#end()
 
 " Airline
