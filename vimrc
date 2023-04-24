@@ -170,7 +170,7 @@ let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 
 
-nmap <leader>m :NERDTreeToggle<CR>
+nmap <silent> <leader>m :silent NERDTreeToggle<CR>
 nmap <leader>mm :NERDTreeFind<CR>
 
 " AsciiDoc preview
