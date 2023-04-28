@@ -1,5 +1,4 @@
-
-" " ---------------------- Vim Improved Config --------------------------------
+" ---------------------- Vim Improved Config --------------------------------
 
 let mapleader = " "                   " Map leader to Space
 let g:loaded_matchparen=1						  " Disable matching parenthesis hightlightg	
@@ -59,9 +58,10 @@ syntax on
 highlight Comment ctermfg=lightblue
 
 " ----------------------------------------------------------------------------------------------------
-set title                             " Show title
-set mouse=a                           " Enables mouse support in Vim
 set path+=**                          " Adds all subdirectories to the path
+set wildignore+=*.class
+
+set mouse=a                           " Enables mouse support in Vim
 set showcmd                           " Show size of visual selection
 set showmatch                         " Show matching braces
 set nowrap                            " Don't wrap long lines
@@ -75,7 +75,7 @@ set ts=2 sts=2 sw=2 expandtab         " Set tab character to four space http://v
 set backspace=2   		                " Backspace deletes like most programs in insert mode
 " Hide mode status
 set noshowmode
-set relativenumber
+" set relativenumber
 set t_Co=256                          " Set terminal color
 set background=dark                   " no comment 
 set noro                              " By default, vimdiff opens file in readonly mode, this enables editing
@@ -120,7 +120,8 @@ autocmd FileType java :abbr psvm public static void main(String[] args) {<CR>}<E
 "iabbrev sout System.out.println("");<Esc>3h2x
 "iabbrev psvm public static void main(String[] args) {<CR>}<esc>O
 
-au BufNewFile,BufRead *.java setlocal syntax=OFF
+autocmd BufNewFile,BufRead *.java setlocal syntax=OFF
+autocmd FileType nerdtree nnoremap <buffer> <Esc> <C-w>l
 
 " Sets Alt + --> (tab next) & Alt + <-- (tab previous)
 " execute "set <M-f>=\ef"
@@ -153,6 +154,7 @@ Plugin 'https://github.com/tpope/vim-commentary'
 Plugin 'https://github.com/vim-scripts/ReplaceWithRegister'
 Plugin 'preservim/nerdtree'
 Plugin 'michaeljsmith/vim-indent-object'
+Plugin 'christoomey/vim-system-copy'
 call vundle#end()
 
 " Airline
@@ -161,15 +163,12 @@ let g:airline_theme='minimalist'
 let g:airline_section_z = ''
 let g:airline#extensions#tabline#buffer_nr_function = 'AirlineTablineFilename'
 
-
 " Netrw
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
-
+let g:NERDTreeMinimalUI = 1
 
 nmap <silent> <leader>m :silent NERDTreeToggle<CR>
-nmap <leader>mm :NERDTreeFind<CR>
-
 " AsciiDoc preview
 nmap <leader>av :w !asciidoc-view -<CR><CR>
 
@@ -177,3 +176,10 @@ nmap <leader>av :w !asciidoc-view -<CR><CR>
 " presentation mode
 " noremap <Left> :silent bp<CR> :redraw!<CR>
 " noremap <Right> :silent bn<CR> :redraw!<CR>
+"
+"
+
+
+
+
+
