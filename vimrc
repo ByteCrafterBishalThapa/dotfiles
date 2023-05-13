@@ -2,6 +2,7 @@
 
 let mapleader = " "                   " Map leader to Space
 let g:loaded_matchparen=1						  " Disable matching parenthesis hightlightg	
+set clipboard=unnamedplus
 
 " ----------------------------------------------------------------------------------------------------
 
@@ -75,7 +76,7 @@ set ts=2 sts=2 sw=2 expandtab         " Set tab character to four space http://v
 set backspace=2   		                " Backspace deletes like most programs in insert mode
 " Hide mode status
 set noshowmode
-" set relativenumber
+set relativenumber
 set t_Co=256                          " Set terminal color
 set background=dark                   " no comment 
 set noro                              " By default, vimdiff opens file in readonly mode, this enables editing
