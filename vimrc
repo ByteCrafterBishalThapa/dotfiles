@@ -1,5 +1,4 @@
 " ---------------------- Vim Improved Config --------------------------------
-
 let mapleader = " "                   " Map leader to Space
 let g:loaded_matchparen=1						  " Disable matching parenthesis hightlightg	
 set clipboard=unnamedplus
