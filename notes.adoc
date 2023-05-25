@@ -17,3 +17,15 @@
 - Install AsciDoc
 
  brew install asciidoctor
+ 
+ 
+- Install good vim plugin Vim-showmarks 
+
+   git clone git@github.com:devbith/vim-showmarks.git ~/.vim/vim-showmarks
+   
+Note:: If the line `source ~/.vim/vim-showmarks/plugin/showmarks.vim` doesn't exist in `vimrc` add it.
+    
+     echo "source ~/.vim/vim-showmarks/plugin/showmarks.vim" >> ~/.vimrc
+
+    
+
