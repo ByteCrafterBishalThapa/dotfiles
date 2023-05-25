@@ -25,6 +25,8 @@ nnoremap <Leader>] :bn<CR>
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
 
+" Show file details
+nnoremap <Leader>i :echo expand('%:p')<CR>
 " ----------------------------------------------------------------------------------------------------
 " System clipboard copy pasting
 vmap <leader>y "+y
@@ -77,7 +79,7 @@ set backspace=2   		                " Backspace deletes like most programs in in
 set noshowmode
 set relativenumber
 set t_Co=256                          " Set terminal color
-set background=dark                   " no comment 
+set background=dark                   " no comment
 set noro                              " By default, vimdiff opens file in readonly mode, this enables editing
 set textwidth=140
 " ----------------------------------------------------------------------------------------------------
@@ -136,7 +138,6 @@ let &t_EI = "\e[2 q"
 " Also allow line-wise scrolling
 inoremap <C-e> <C-o><C-e>
 inoremap <C-y> <C-o><C-y>
-
     
 " Split border style
 highlight VertSplit cterm=none gui=none
@@ -155,6 +156,7 @@ Plugin 'https://github.com/vim-scripts/ReplaceWithRegister'
 Plugin 'preservim/nerdtree'
 Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'christoomey/vim-system-copy'
+Plugin 'tpope/vim-fugitive'
 call vundle#end()
 
 " Airline
@@ -176,10 +178,30 @@ nmap <leader>av :w !asciidoc-view -<CR><CR>
 " presentation mode
 " noremap <Left> :silent bp<CR> :redraw!<CR>
 " noremap <Right> :silent bn<CR> :redraw!<CR>
-"
-"
 
+function! HasTrailingWhitespace()
+  if search('\s\+$', 'n', line('.') + 0, line('$')) > 0
+    return ' [trailing]'
+  else
+    return ''
+  endif
+endfunction
 
+" STATUS LINE ------------------------------------------------------------
 
+" Clear status line when vimrc is reloaded.
+set statusline=
+set statusline+=%#LineNr#
 
+" Use a divider to separate the left side from the right side.
+set statusline+=%=
+ 
+" Status line right side.
+set statusline+=%{fugitive#statusline()}
+set statusline+=\ %M\ %y\ %{&fileencoding}\ %R
+set statusline+=\ %l\:%c\ [%p%%]
+set statusline+=%{HasTrailingWhitespace()}
+
+" Show the status on the second to last line
+set laststatus=2
 
