@@ -18,15 +18,22 @@ map <leader>b <Action>(ToggleLineBreakpoint)
 map <leader>ff <Action>(SearchEverywhere)
 map gf <Action>(GotoDeclaration)
 nnoremap <silent> <Leader>m :action ActivateProjectToolWindow<CR>
-
+nnoremap <silent> <Leader>cm :action ClearBookmarks<CR>
 
 nnoremap m1 :action ToggleBookmark1<CR>
 nnoremap m2 :action ToggleBookmark2<CR>
 nnoremap m3 :action ToggleBookmark3<CR>
 nnoremap m4 :action ToggleBookmark4<CR>
 nnoremap m5 :action ToggleBookmark5<CR>
-nnoremap m6 :action ToggleBookmark6<CR>
-nnoremap m7 :action ToggleBookmark7<CR>
-nnoremap m8 :action ToggleBookmark8<CR>
-nnoremap m9 :action ToggleBookmark9<CR>
 
+nnoremap ma :action ToggleBookmarkA<CR>
+nnoremap mb :action ToggleBookmarkB<CR>
+nnoremap mc :action ToggleBookmarkC<CR>
+nnoremap md :action ToggleBookmarkD<CR>
+nnoremap me :action ToggleBookmarkE<CR>
+
+nnoremap `a `A
+nnoremap `b `B
+nnoremap `c `C
+nnoremap `d `D
+nnoremap `e `E

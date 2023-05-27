@@ -198,10 +198,9 @@ set statusline+=%=
  
 " Status line right side.
 set statusline+=%{fugitive#statusline()}
-set statusline+=\ %M\ %y\ %{&fileencoding}\ %R
+set statusline+=\ %m\ %M\ %y\ %{&fileencoding}\ %R
 set statusline+=\ %l\:%c\ [%p%%]
 set statusline+=%{HasTrailingWhitespace()}
 
 " Show the status on the second to last line
 set laststatus=2
-
