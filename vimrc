@@ -1,7 +1,6 @@
 " ---------------------- Vim Improved Config --------------------------------
 let mapleader = " "                   " Map leader to Space
 let g:loaded_matchparen=1						  " Disable matching parenthesis hightlightg	
-set clipboard=unnamedplus
 
 " ----------------------------------------------------------------------------------------------------
 
@@ -28,15 +27,13 @@ nmap <CR> o<Esc>
 " Show file details
 nnoremap <Leader>i :echo expand('%:p')<CR>
 " ----------------------------------------------------------------------------------------------------
-" System clipboard copy pasting
-vmap <leader>y "+y
-vmap <leader>y "+y
-vmap <leader>d "+d
-nmap <leader>y "+yy
-nmap <leader>p "+p
-nmap <leader>P "+P
-vmap <leader>p "+p
-vmap <leader>P "+P
+" Copy to system clipboard
+nnoremap <Leader>y "+y
+vnoremap <Leader>y "+y
+
+" Paste from system clipboard
+nnoremap <Leader>p "+p
+vnoremap <Leader>p "+p
 " ----------------------------------------------------------------------------------------------------
 nmap <leader>ec !!zsh<CR>
 nmap <leader>rc :source ~/.vimrc<CR>
@@ -77,6 +74,7 @@ set ts=2 sts=2 sw=2 expandtab         " Set tab character to four space http://v
 set backspace=2   		                " Backspace deletes like most programs in insert mode
 " Hide mode status
 set noshowmode
+set nonumber
 set relativenumber
 set t_Co=256                          " Set terminal color
 set background=dark                   " no comment
