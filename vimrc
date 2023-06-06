@@ -108,8 +108,6 @@ filetype on             " enable filetype detection
 filetype plugin on      " load file-specific plugins
 filetype plugin indent on
 
-autocmd Filetype java source ~/thapabishal/cursor_output/java/cursor_output.vim
-autocmd Filetype javascript source ~/thapabishal/cursor_output/javascript/cursor_output.vim
 autocmd FileType asciidoc setlocal spell spelllang=en_us
 
 " Define abbreviation for Java files
@@ -202,3 +200,5 @@ set statusline+=%{HasTrailingWhitespace()}
 
 " Show the status on the second to last line
 set laststatus=2
+filetype plugin on
+
