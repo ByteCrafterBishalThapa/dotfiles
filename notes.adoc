@@ -17,6 +17,11 @@
 - Install AsciDoc
 
  brew install asciidoctor
- 
-    
+
+- Docker Completion for Zsh (Official)
+
+* `mkdir -p ~/.oh-my-zsh/plugins/docker/`
+* `curl -fLo ~/.oh-my-zsh/plugins/docker/_docker https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker`
+* Add `docker` to `plugins` section in `~/.zshrc`
+* `exec zsh`
 
