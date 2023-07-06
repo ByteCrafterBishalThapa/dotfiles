@@ -25,3 +25,9 @@
 * Add `docker` to `plugins` section in `~/.zshrc`
 * `exec zsh`
 
+- Kubectl Completion for Zsh
+
+ * mkdir -p ~/.oh-my-zsh/custom/plugins/kubectl-autocomplete/
+ * kubectl completion zsh > ~/.oh-my-zsh/custom/plugins/kubectl-autocomplete/kubectl-autocomplete.plugin.zsh
+ * Open ~/.zshrc 
+ * Add the plugin--> plugins=(kubectl-autocomplete)
