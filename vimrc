@@ -38,20 +38,18 @@ vnoremap <Leader>p "+p
 nmap <leader>ec !!zsh<CR>
 nmap <leader>rc :source ~/.vimrc<CR>
 
-" Scrolling Up and Down
-nmap <leader>d <C-d>
-nmap <leader>u <C-u>
-vmap <leader>d <C-d>
-vmap <leader>u <C-u>
-
 " Toggling whitespace
 nmap <leader>tsc :set spell! spelllang=en_us<CR>
 nmap <leader>tw :set wrap! linebreak<CR>
 
-" --------------------------------------------------------------------------------------------------
+" Digraph mapping
+map <Leader>dua i↑<Esc>
+map <Leader>dda i↓<Esc>
+map <Leader>dla i←<Esc>
+map <Leader>dra i→<Esc>
+
 " Toggle relative number with <leader>tr
 nnoremap <silent> <leader>tr :set relativenumber!<CR>
-
 " ----------------------------------------------------------------------------------------------------
 syntax on
 highlight Comment ctermfg=lightblue
@@ -170,6 +168,8 @@ nmap <silent> <leader>m :silent NERDTreeToggle<CR>
 " AsciiDoc preview
 nmap <leader>av :w !asciidoc-view -<CR><CR>
 
+" makes Ascii art font
+nmap <leader>1 :.!toilet -w 200 -f term -F border<CR>
 
 " presentation mode
 " noremap <Left> :silent bp<CR> :redraw!<CR>
