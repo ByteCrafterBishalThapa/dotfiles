@@ -13,9 +13,7 @@ CASE_SENSITIVE="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-plugins=(docker)
-
+plugins=(git docker kubectl-autocomplete minikube)
 source $ZSH/oh-my-zsh.sh
 
 PROMPT='%{$fg[white]%}%~%{$reset_color%}$(git_prompt_info)'
@@ -38,6 +36,7 @@ alias slog="git log --graph --pretty=format:'%C(auto) %h %cr -%d %s %C(cyan)<%an
 alias mci="mvn clean install"
 alias mciskiptest="mvn clean install -Dmaven.test.skip=true"
 alias master="git checkout master"
+alias main="git checkout main"
 alias sjava="sdk use java" 
 alias evimconfig="vim ~/.vimrc"
 alias ezshconfig="vim ~/.zshrc"
@@ -45,6 +44,8 @@ alias st="cat ~/.todos.adoc"
 alias et="vim ~/.todos.adoc"
 alias tree2="tree -L 2"
 alias tree3="tree -L 3"
+alias docker-lsc="docker container list --format 'table {{.ID}} \t{{.Names}} \t{{.Image}} \t{{.Status}}'"
+
 # Save bash history to a file
 HISTSIZE=100000
 HISTFILESIZE=200000

@@ -1,4 +1,4 @@
-" ---------------------- Vim Improved Config --------------------------------
+" ---------------------- Vim Improed Config --------------------------------
 let mapleader = " "                   " Map leader to Space
 let g:loaded_matchparen=1						  " Disable matching parenthesis hightlightg	
 
@@ -80,8 +80,8 @@ set noro                              " By default, vimdiff opens file in readon
 set textwidth=140
 " ----------------------------------------------------------------------------------------------------
 "  Highlight any text that exceeds 140 characters with a red background and white text.
- highlight ErrorLine ctermbg=black ctermfg=red 
- match ErrorLine /\%>140v.\+/
+" highlight ErrorLine ctermbg=black ctermfg=red 
+" match ErrorLine /\%>240v.\+/
 " ----------------------------------------------------------------------------------------------------
 
 " Open new split panes to right and bottom, which feels more natural than Vim’s default
@@ -200,5 +200,19 @@ set statusline+=%{HasTrailingWhitespace()}
 
 " Show the status on the second to last line
 set laststatus=2
-filetype plugin on
 
+autocmd Filetype java source ~/.vim/cursor_output-main/java/cursor_output.vim
+autocmd Filetype javascript source ~/.vim/cursor_output-main/javascript/cursor_output.vim
+
+" Format Java code using google-java-format
+function! FormatJava()
+    silent execute '!java -jar ~/thapabishal/dotfiles/lib/google-java-format.jar --replace %'
+    edit!
+    redraw!
+endfunction
+autocmd FileType java nnoremap <leader>F :call FormatJava()<CR>
+
+if &diff
+    syntax off
+    set textwidth=500
+endif
