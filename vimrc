@@ -32,8 +32,8 @@ nnoremap <Leader>y "+y
 vnoremap <Leader>y "+y
 
 " Paste from system clipboard
-nnoremap <Leader>p "+p
-vnoremap <Leader>p "+p
+nnoremap <Leader>p "+P
+vnoremap <Leader>p "+P
 " ----------------------------------------------------------------------------------------------------
 nmap <leader>ec !!zsh<CR>
 nmap <leader>rc :source ~/.vimrc<CR>
@@ -112,9 +112,6 @@ autocmd FileType asciidoc setlocal spell spelllang=en_us
 autocmd FileType java :abbr sout System.out.println("");<Esc>3h2x
 autocmd FileType java :abbr psvm public static void main(String[] args) {<CR>}<Esc>ko
 
-" Java
-"iabbrev sout System.out.println("");<Esc>3h2x
-"iabbrev psvm public static void main(String[] args) {<CR>}<esc>O
 
 autocmd BufNewFile,BufRead *.java setlocal syntax=OFF
 autocmd FileType nerdtree nnoremap <buffer> <Esc> <C-w>l
@@ -151,6 +148,8 @@ Plugin 'preservim/nerdtree'
 Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'christoomey/vim-system-copy'
 Plugin 'tpope/vim-fugitive'
+Plugin 'Yggdroot/indentLine'
+Plugin 'dense-analysis/ale'
 call vundle#end()
 
 " Airline
@@ -203,6 +202,16 @@ set laststatus=2
 
 autocmd Filetype java source ~/.vim/cursor_output-main/java/cursor_output.vim
 autocmd Filetype javascript source ~/.vim/cursor_output-main/javascript/cursor_output.vim
+
+
+" Disable indentLine plugin by default
+let g:indentLine_enabled = 0
+
+" Enable indentLine plugin for yaml file type 
+autocmd FileType yaml let g:indentLine_enabled = 1
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+let g:indentLine_char = '⦙'
+
 
 " Format Java code using google-java-format
 function! FormatJava()
