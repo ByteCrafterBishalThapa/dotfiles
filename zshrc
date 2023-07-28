@@ -13,7 +13,7 @@ CASE_SENSITIVE="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker kubectl-autocomplete minikube argocd)
+plugins=(git docker minikube argocd)
 source $ZSH/oh-my-zsh.sh
 
 PROMPT='%{$fg[white]%}%~%{$reset_color%}$(git_prompt_info)'
