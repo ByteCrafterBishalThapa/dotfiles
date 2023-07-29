@@ -200,10 +200,6 @@ set statusline+=%{HasTrailingWhitespace()}
 " Show the status on the second to last line
 set laststatus=2
 
-autocmd Filetype java source ~/.vim/cursor_output-main/java/cursor_output.vim
-autocmd Filetype javascript source ~/.vim/cursor_output-main/javascript/cursor_output.vim
-
-
 " Disable indentLine plugin by default
 let g:indentLine_enabled = 0
 
