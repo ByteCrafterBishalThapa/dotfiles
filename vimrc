@@ -212,6 +212,10 @@ autocmd FileType yaml let g:indentLine_enabled = 1
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 let g:indentLine_char = '⦙'
 
+" Disable ALE by default for all file types
+" Enable ALE only for YAML files
+let g:ale_enabled = 0
+autocmd FileType yaml let g:ale_enabled = 1
 
 " Format Java code using google-java-format
 function! FormatJava()

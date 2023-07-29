@@ -16,6 +16,7 @@ CASE_SENSITIVE="true"
 plugins=(git docker minikube argocd)
 source $ZSH/oh-my-zsh.sh
 
+
 PROMPT='%{$fg[white]%}%~%{$reset_color%}$(git_prompt_info)'
 PROMPT+=" %(?:%{$fg_bold[green]%}$ :%{$fg_bold[red]%}$ )%{$reset_color%}"
 
@@ -44,7 +45,7 @@ alias st="cat ~/.todos.adoc"
 alias et="vim ~/.todos.adoc"
 alias tree2="tree -L 2"
 alias tree3="tree -L 3"
-alias docker-lsc="docker container list --format 'table {{.ID}} \t{{.Names}} \t{{.Image}} \t{{.Status}}'"
+alias dockerlsc="docker container list --format 'table {{.ID}} \t{{.Names}} \t{{.Image}} \t{{.Status}}'"
 
 # Save bash history to a file
 HISTSIZE=100000
