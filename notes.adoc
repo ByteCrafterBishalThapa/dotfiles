@@ -20,6 +20,11 @@
  dnf install yamllint
  apt-get install yamllint
 
+Create a environment variable which points to custom define yamlinting configuration file.
+Add in the ~/.zshrc or ~/.zsh_profile
+
+  `export YAMLLINT_CONFIG_FILE='/home/bishalthapa/thapabishal/dotfiles/yamllinting-config.yaml';`
+
 - Install AsciDoc
 
  brew install asciidoctor
