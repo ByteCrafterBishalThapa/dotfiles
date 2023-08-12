@@ -8,6 +8,10 @@
  git config --global diff.tool vimdiff
  git config --global merge.tool vimdiff
 
+- Install <a href="https://github.com/junegunn/fzf">Fuzzy Finder </a> 
+
+ brew install fzf
+
 - Configure global gitignore 
 
   ln -s ${dotfile_path}/dotfiles/gitignore ~/.gitignore
