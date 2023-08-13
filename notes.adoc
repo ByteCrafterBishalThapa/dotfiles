@@ -8,9 +8,11 @@
  git config --global diff.tool vimdiff
  git config --global merge.tool vimdiff
 
-- Install Fuzzy Finder https://github.com/junegunn/fzf
+- Install Fuzzy Finder and fd [ https://github.com/junegunn/fzf / https://github.com/sharkdp/fd ]
 
  brew install fzf
+ brew install fd
+
 
 - Configure global gitignore 
 
