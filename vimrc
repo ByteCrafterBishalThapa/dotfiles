@@ -12,7 +12,7 @@ map <leader>qq :q<CR>
 map <leader>qa :qa<CR>
 map <leader>qf :q!<CR>
 
-nmap <leader>f :find<space>
+nmap <leader>f :FZF<CR>
 map <leader>th :set hlsearch!<CR>
 
 nnoremap <leader>l gt
@@ -63,7 +63,6 @@ set showcmd                           " Show size of visual selection
 set showmatch                         " Show matching braces
 set nowrap                            " Don't wrap long lines
 set wildmenu                          " Tab autocomplete in command mode
-set nohlsearch                        " Highlight search results
 set ignorecase smartcase              " Search queries intelligently set case
 set incsearch                         " Show search results as you type
 set timeoutlen=1000 ttimeoutlen=0     " Remove timeout when hitting escape
@@ -78,8 +77,10 @@ set t_Co=256                          " Set terminal color
 set background=dark                   " no comment
 set noro                              " By default, vimdiff opens file in readonly mode, this enables editing
 set textwidth=140
+set rtp+=/opt/homebrew/opt/fzf        " Fuzzyfinder Vim integration 
 " ----------------------------------------------------------------------------------------------------
 "  Highlight any text that exceeds 140 characters with a red background and white text.
+"
 " highlight ErrorLine ctermbg=black ctermfg=red 
 " match ErrorLine /\%>240v.\+/
 " ----------------------------------------------------------------------------------------------------
@@ -112,8 +113,6 @@ autocmd FileType asciidoc setlocal spell spelllang=en_us
 autocmd FileType java :abbr sout System.out.println("");<Esc>3h2x
 autocmd FileType java :abbr psvm public static void main(String[] args) {<CR>}<Esc>ko
 
-
-autocmd BufNewFile,BufRead *.java setlocal syntax=OFF
 autocmd FileType nerdtree nnoremap <buffer> <Esc> <C-w>l
 
 " Sets Alt + --> (tab next) & Alt + <-- (tab previous)

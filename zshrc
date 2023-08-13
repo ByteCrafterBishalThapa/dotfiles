@@ -20,6 +20,7 @@ source $ZSH/oh-my-zsh.sh
 PROMPT='%{$fg[white]%}%~%{$reset_color%}$(git_prompt_info)'
 PROMPT+=" %(?:%{$fg_bold[green]%}$ :%{$fg_bold[red]%}$ )%{$reset_color%}"
 
+
 # git settings
 ZSH_THEME_GIT_PROMPT_PREFIX=" ${FG[075]}(${FG[078]}"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
@@ -56,13 +57,18 @@ HISTFILE=~/.bash_history
 # Set history fromat to include timestaps
 HISTTIMEFORMAT="%Y-%m-%d %T "
 
-#vim() {
-#  if [ $# -eq 0 ]; then
-#    /usr/bin/vim ./
-#  else
-#    /usr/bin/vim "$@"
-#  fi
-#}
+# ------------- Fuzzy Finder ---------------------------------
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+function vf() {
+ vim $(fzf --height 70% --layout=reverse --border --preview 'bat --color=always {}')
+}
+# Setting fd as the default source for fzf
+export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix'
+# To apply the command to CTRL-T as well
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+# --------------------------------------------------------------
 
 [[ -s "$HOME/.zsh_profile" ]] && source "$HOME/.zsh_profile"
 
