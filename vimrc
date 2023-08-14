@@ -161,8 +161,10 @@ let g:airline#extensions#tabline#buffer_nr_function = 'AirlineTablineFilename'
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 let g:NERDTreeMinimalUI = 1
+let g:NERDTreeWinSize=60
 
 nmap <silent> <leader>m :silent NERDTreeToggle<CR>
+nmap <silent> <leader>ef :silent NERDTreeFind<CR>
 " AsciiDoc preview
 nmap <leader>av :w !asciidoc-view -<CR><CR>
 
