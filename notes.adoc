@@ -11,6 +11,7 @@
 - Install Fuzzy Finder and fd [ https://github.com/junegunn/fzf / https://github.com/sharkdp/fd ]
 
  brew install fzf
+ brew install bat
  brew install fd
 
 
