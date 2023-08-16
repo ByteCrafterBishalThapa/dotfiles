@@ -57,7 +57,6 @@ highlight Comment ctermfg=lightblue
 " ----------------------------------------------------------------------------------------------------
 set path+=**                          " Adds all subdirectories to the path
 set wildignore+=*.class
-
 set mouse=a                           " Enables mouse support in Vim
 set showcmd                           " Show size of visual selection
 set showmatch                         " Show matching braces

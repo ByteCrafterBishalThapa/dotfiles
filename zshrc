@@ -61,7 +61,7 @@ HISTTIMEFORMAT="%Y-%m-%d %T "
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 function vf() {
- vim $(fzf --height 70% --layout=reverse --border --preview 'bat --color=always {}')
+ nvim $(fzf --height 70% --layout=reverse --border --preview 'bat --color=always {}')
 }
 # Setting fd as the default source for fzf
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix'
