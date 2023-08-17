@@ -93,6 +93,11 @@ nnoremap <C-w>_ <C-w>s
 nnoremap <C-w>\| <C-W>v
 
 " ----------------------------------------------------------------------------------------------------
+"  Easy Switch from NerdTree
+noremap <C-h> <C-w>h
+noremap <C-l> <C-w>l
+
+" ----------------------------------------------------------------------------------------------------
 " Make adjusting split size bit eaiser
 noremap <C-w><Left> :vertical resize +3<CR>
 noremap <C-w><Right> :vertical resize -3<CR>
@@ -204,13 +209,12 @@ set laststatus=2
 let g:indentLine_enabled = 0
 
 " Enable indentLine plugin for yaml file type 
-autocmd FileType yaml let g:indentLine_enabled = 1
+let g:indentLine_enabled = 1
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 let g:indentLine_char = '⦙'
 
-" Disable ALE by default for all file types
-" Enable ALE only for YAML files
-let g:ale_enabled = 0
+" Disable ALE for JAVA 
+let g:ale_pattern_options = {'\.java$': {'ale_enabled': 0}}
 autocmd FileType yaml let g:ale_enabled = 1
 
 " Format Java code using google-java-format
