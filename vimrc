@@ -12,7 +12,6 @@ map <leader>qq :q<CR>
 map <leader>qa :qa<CR>
 map <leader>qf :q!<CR>
 
-nmap <leader>f :FZF<CR>
 map <leader>th :set hlsearch!<CR>
 
 nnoremap <leader>l gt
@@ -76,7 +75,6 @@ set t_Co=256                          " Set terminal color
 set background=dark                   " no comment
 set noro                              " By default, vimdiff opens file in readonly mode, this enables editing
 set textwidth=140
-set rtp+=/opt/homebrew/opt/fzf        " Fuzzyfinder Vim integration 
 " ----------------------------------------------------------------------------------------------------
 "  Highlight any text that exceeds 140 characters with a red background and white text.
 "
@@ -150,10 +148,31 @@ Plugin 'https://github.com/vim-scripts/ReplaceWithRegister'
 Plugin 'preservim/nerdtree'
 Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'christoomey/vim-system-copy'
-Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive' 
 Plugin 'Yggdroot/indentLine'
 Plugin 'dense-analysis/ale'
+Plugin 'junegunn/fzf.vim'
+Plugin 'machakann/vim-highlightedyank'
+Plugin 'morhetz/gruvbox'
+Plugin 'doums/darcula'
 call vundle#end()
+
+" colorscheme gruvbox
+colorscheme darcula
+
+" Vim Highlightedyank
+let g:highlightedyank_highlight_color = "rgba(160, 160, 160, 155)"
+let g:highlightedyank_highlight_duration = 800
+let g:highlightedyank_highlight_in_visual = 0
+
+" FZF
+let g:fzf_buffers_jump = 1      " [Buffers] to existing split
+set rtp+=/opt/homebrew/opt/fzf        " Fuzzyfinder Vim integratio
+nmap <leader>ff :Files<CR>
+nmap <leader>fg :GFiles<CR>
+nmap <leader>fb :Buffer<CR>
+nmap <leader>fw :Rg 
+
 
 " Airline
 let g:airline_powerline_fonts = 1

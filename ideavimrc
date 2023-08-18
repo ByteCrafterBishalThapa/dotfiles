@@ -16,9 +16,11 @@ set clipboard+=unnamed
 map <leader>b <Action>(ToggleLineBreakpoint)
 
 map <leader>ff <Action>(SearchEverywhere)
+map <leader>fw <Action>(FindInPath)
 map gf <Action>(GotoDeclaration)
 nnoremap <silent> <Leader>m :action ActivateProjectToolWindow<CR>
 nnoremap <silent> <Leader>cm :action ClearBookmarks<CR>
+nnoremap <leader>o <Action>(FileStructurePopup)
 
 nnoremap m1 :action ToggleBookmark1<CR>
 nnoremap m2 :action ToggleBookmark2<CR>
@@ -37,3 +39,12 @@ nnoremap `b `B
 nnoremap `c `C
 nnoremap `d `D
 nnoremap `e `E
+
+
+set NERDTree # File Explorer
+noremap <leader>ef :NERDTree<CR>
+let g:NERDTreeMapActivateNode='l'
+let g:NERDTreeMapJumpParent='h'
+
+
+set highlightedyank # Highlight what you try to copy
