@@ -8,7 +8,7 @@ let g:loaded_matchparen=1						  " Disable matching parenthesis hightlightg
 
 " ----------------------------------------------------------------------------------------------------
 map <leader>s :w<CR>
-map <leader>qq :q<CR>
+map <leader>qb :bd<CR>
 map <leader>qa :qa<CR>
 map <leader>qf :q!<CR>
 
@@ -17,8 +17,8 @@ map <leader>th :set hlsearch!<CR>
 nnoremap <leader>l gt
 nnoremap <leader>h gT
 
-nnoremap <Leader>[ :bp<CR>
-nnoremap <Leader>] :bn<CR>
+nnoremap <Leader>bp :bp<CR>
+nnoremap <Leader>bn :bn<CR>
 
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
@@ -75,6 +75,7 @@ set t_Co=256                          " Set terminal color
 set background=dark                   " no comment
 set noro                              " By default, vimdiff opens file in readonly mode, this enables editing
 set textwidth=140
+set autowrite
 " ----------------------------------------------------------------------------------------------------
 "  Highlight any text that exceeds 140 characters with a red background and white text.
 "
@@ -153,12 +154,13 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'dense-analysis/ale'
 Plugin 'junegunn/fzf.vim'
 Plugin 'machakann/vim-highlightedyank'
-Plugin 'morhetz/gruvbox'
-Plugin 'doums/darcula'
+Plugin 'uiiaoo/java-syntax.vim'
+Plugin 'catppuccin/vim'
 call vundle#end()
 
-" colorscheme gruvbox
-colorscheme darcula
+
+colorscheme catppuccin_mocha 
+set termguicolors
 
 " Vim Highlightedyank
 let g:highlightedyank_highlight_color = "rgba(160, 160, 160, 155)"
@@ -224,8 +226,6 @@ set statusline+=%{HasTrailingWhitespace()}
 " Show the status on the second to last line
 set laststatus=2
 
-" Disable indentLine plugin by default
-let g:indentLine_enabled = 0
 
 " Enable indentLine plugin for yaml file type 
 let g:indentLine_enabled = 1
