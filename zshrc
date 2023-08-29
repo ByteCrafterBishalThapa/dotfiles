@@ -31,7 +31,7 @@ export EDITOR='vim'
 export TERM=xterm-256color
 
 # ------------ alias --------------------------------
-alias vi='vim'
+alias vi='nvim'
 alias ls='ls -lG'
 alias gs='git status'
 alias slog="git log --graph --pretty=format:'%C(auto) %h %cr -%d %s %C(cyan)<%an>' --abbrev-commit -n 15"

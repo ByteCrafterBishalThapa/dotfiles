@@ -159,7 +159,8 @@ Plugin 'catppuccin/vim'
 call vundle#end()
 
 
-colorscheme catppuccin_mocha 
+
+" colorscheme catppuccin_mocha 
 set termguicolors
 
 " Vim Highlightedyank
