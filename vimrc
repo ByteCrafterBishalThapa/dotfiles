@@ -136,31 +136,7 @@ inoremap <C-y> <C-o><C-y>
 highlight VertSplit cterm=none gui=none
 highlight LineNr ctermfg=grey
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
 
-call vundle#begin()
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'https://github.com/ap/vim-css-color'
-Plugin 'https://github.com/tpope/vim-surround'
-Plugin 'https://github.com/tpope/vim-commentary'
-Plugin 'https://github.com/vim-scripts/ReplaceWithRegister'
-Plugin 'preservim/nerdtree'
-Plugin 'michaeljsmith/vim-indent-object'
-Plugin 'christoomey/vim-system-copy'
-Plugin 'tpope/vim-fugitive' 
-Plugin 'Yggdroot/indentLine'
-Plugin 'dense-analysis/ale'
-Plugin 'junegunn/fzf.vim'
-Plugin 'machakann/vim-highlightedyank'
-Plugin 'uiiaoo/java-syntax.vim'
-Plugin 'catppuccin/vim'
-call vundle#end()
-
-
-
-" colorscheme catppuccin_mocha 
 set termguicolors
 
 " Vim Highlightedyank
