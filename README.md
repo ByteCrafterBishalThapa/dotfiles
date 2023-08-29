@@ -4,8 +4,9 @@ This repo contains configuration files. I use it to setup machine.
 
 ### Clone this repo and follow this instrusctions 
 
-### 1. Setup <a href="https://www.vim.org/">Vim</a>
+### 1. Setup <a href="https://www.vim.org/">Vim or NVim</a>
 - `ln -s ${dotfile_path}/dotfiles/vimrc ~/.vimrc`
+- `ln -s ${dotfile_path}/dotfiles/init.vim ~/.config/nvim`
 
 `${dotfile_path}` Where this repo is cloned 
 
