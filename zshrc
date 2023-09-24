@@ -70,6 +70,8 @@ export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix'
 # To apply the command to CTRL-T as well
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
+
+
 # --------------------------------------------------------------
 
 [[ -s "$HOME/.zsh_profile" ]] && source "$HOME/.zsh_profile"
@@ -80,3 +82,5 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 
 export JAVA_HOME=${SDKMAN_CANDIDATES_DIR}/java/${CURRENT}
+
+
