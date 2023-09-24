@@ -13,7 +13,7 @@ CASE_SENSITIVE="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker kubectl minikube argocd)
+plugins=(git docker kubectl minikube argocd pass)
 source $ZSH/oh-my-zsh.sh
 
 
@@ -27,13 +27,12 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 ZSH_THEME_GIT_PROMPT_DIRTY="${FG[214]}*%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="${FG[075]})%{$reset_color%}"
 # --------------------------------------------------
-export EDITOR='nvim'
+export EDITOR='vim'
 export TERM=xterm-256color
 
 # ------------ alias --------------------------------
-alias vim="nvim"
-alias vi="nvim"
-alias oldvim="vim"
+alias vim="vim"
+alias vi="vim"
 
 alias ls='ls -lG'
 alias gs='git status'
@@ -43,10 +42,10 @@ alias mciskiptest="mvn clean install -Dmaven.test.skip=true"
 alias master="git checkout master"
 alias main="git checkout main"
 alias sjava="sdk use java" 
-alias evimconfig="nvim ~/.vimrc"
-alias ezshconfig="nvim ~/.zshrc"
+alias evimconfig="vim ~/.vimrc"
+alias ezshconfig="vim ~/.zshrc"
 alias st="cat ~/.todos.adoc"
-alias et="nvim ~/.todos.adoc"
+alias et="vim ~/.todos.adoc"
 alias tree2="tree -L 2"
 alias tree3="tree -L 3"
 alias dockerlsc="docker container list --format 'table {{.ID}} \t{{.Names}} \t{{.Image}} \t{{.Status}}'"

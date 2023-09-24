@@ -1,3 +1,19 @@
+" ------------------ Plugin -------------
+call plug#begin()
+Plug 'https://github.com/tpope/vim-surround'
+Plug 'https://github.com/tpope/vim-commentary'
+Plug 'https://github.com/vim-scripts/ReplaceWithRegister'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'christoomey/vim-system-copy'
+Plug 'preservim/nerdtree'
+Plug 'tpope/vim-fugitive' 
+Plug 'Yggdroot/indentLine'
+Plug 'dense-analysis/ale'
+Plug 'junegunn/fzf.vim'
+Plug 'machakann/vim-highlightedyank'
+call plug#end()
+
+
 " ---------------------- Vim Improed Config --------------------------------
 let mapleader = " "                   " Map leader to Space
 let g:loaded_matchparen=1						  " Disable matching parenthesis hightlightg	
@@ -137,8 +153,6 @@ highlight VertSplit cterm=none gui=none
 highlight LineNr ctermfg=grey
 
 
-set termguicolors
-
 " Vim Highlightedyank
 let g:highlightedyank_highlight_color = "rgba(160, 160, 160, 155)"
 let g:highlightedyank_highlight_duration = 800
@@ -219,9 +233,15 @@ function! FormatJava()
     edit!
     redraw!
 endfunction
-autocmd FileType java nnoremap <leader>F :call FormatJava()<CR>
+autocmd FileType java nnoremap <leader>fc :call FormatJava()<CR>
 
 if &diff
     syntax off
     set textwidth=500
 endif
+
+filetype plugin on
+autocmd Filetype java source ~/.vim/cursor_output-main/java/cursor_output.vim
+autocmd Filetype javascript source ~/.vim/cursor_output-main/javascript/cursor_output.vim
+autocmd FileType java syntax off
+
