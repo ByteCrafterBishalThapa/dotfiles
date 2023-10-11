@@ -9,8 +9,7 @@ set scrolloff=5
 " Do incremental searching.
 set incsearch
 " Don't use Ex mode, use Q for formatting.
-map Q gq
-set clipboard+=unnamed
+map Q q
 
 "" Map \b to toggle the breakpoint on the current line
 map <leader>b <Action>(ToggleLineBreakpoint)

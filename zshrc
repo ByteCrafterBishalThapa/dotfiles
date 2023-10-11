@@ -29,6 +29,7 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="${FG[075]})%{$reset_color%}"
 # --------------------------------------------------
 export EDITOR='vim'
 export TERM=xterm-256color
+export XDG_CONFIG_HOME=~/.config
 
 # ------------ alias --------------------------------
 alias vim="vim"

@@ -13,7 +13,16 @@ Plug 'junegunn/fzf.vim'
 Plug 'machakann/vim-highlightedyank'
 call plug#end()
 
-
+" -------- Only Yank and Paste from * register ----
+noremap  y "zy
+noremap  Y "zY
+noremap  p "zp
+noremap  P "zP
+vnoremap y "zy
+vnoremap Y "zY
+vnoremap p "zp
+noremap  dd "zdd
+noremap  yy "zyy
 " ---------------------- Vim Improed Config --------------------------------
 let mapleader = " "                   " Map leader to Space
 let g:loaded_matchparen=1						  " Disable matching parenthesis hightlightg	
