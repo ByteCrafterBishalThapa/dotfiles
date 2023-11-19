@@ -14,15 +14,15 @@ Plug 'machakann/vim-highlightedyank'
 call plug#end()
 
 " -------- Only Yank and Paste from * register ----
-noremap  y "zy
-noremap  Y "zY
-noremap  p "zp
-noremap  P "zP
-vnoremap y "zy
-vnoremap Y "zY
-vnoremap p "zp
-noremap  dd "zdd
-noremap  yy "zyy
+" noremap  y "zy
+" noremap  Y "zY
+" noremap  p "zp
+" noremap  P "zP
+" vnoremap y "zy
+" vnoremap Y "zY
+" vnoremap p "zp
+" noremap  dd "zdd
+" noremap  yy "zyy
 " ---------------------- Vim Improed Config --------------------------------
 let mapleader = " "                   " Map leader to Space
 let g:loaded_matchparen=1						  " Disable matching parenthesis hightlightg	
@@ -92,6 +92,7 @@ set timeoutlen=1000 ttimeoutlen=0     " Remove timeout when hitting escape
 set number ruler                      " Display line number
 set ts=2 sts=2 sw=2 expandtab         " Set tab character to four space http://vimcasts.org/episodes/tabs-and-spaces/
 set backspace=2   		                " Backspace deletes like most programs in insert mode
+set nohlsearch
 " Hide mode status
 set noshowmode
 "set nonumber
@@ -100,7 +101,7 @@ set t_Co=256                          " Set terminal color
 set background=dark                   " no comment
 set noro                              " By default, vimdiff opens file in readonly mode, this enables editing
 set textwidth=140
-set autowrite
+set autowriteall
 " ----------------------------------------------------------------------------------------------------
 "  Highlight any text that exceeds 140 characters with a red background and white text.
 "
@@ -194,7 +195,7 @@ nmap <silent> <leader>ef :silent NERDTreeFind<CR>
 nmap <leader>av :w !asciidoc-view -<CR><CR>
 
 " makes Ascii art font
-nmap <leader>1 :.!toilet -w 200 -f term -F border<CR>
+nmap <leader>11 :.!toilet -w 200 -f term -F border<CR>
 
 " presentation mode
 " noremap <Left> :silent bp<CR> :redraw!<CR>
@@ -253,4 +254,5 @@ filetype plugin on
 autocmd Filetype java source ~/.vim/cursor_output-main/java/cursor_output.vim
 autocmd Filetype javascript source ~/.vim/cursor_output-main/javascript/cursor_output.vim
 autocmd FileType java syntax off
+autocmd FileType markdown syntax off
 

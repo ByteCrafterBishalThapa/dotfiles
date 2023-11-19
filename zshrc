@@ -85,3 +85,5 @@ export SDKMAN_DIR="$HOME/.sdkman"
 export JAVA_HOME=${SDKMAN_CANDIDATES_DIR}/java/${CURRENT}
 
 
+
+

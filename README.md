@@ -47,5 +47,10 @@ Install Tmux plugin to copy to system clipboard
 #### 6. Install `brew install ruby`
 - Follow the last instruction put the system variable in  `~/.zsh_profile`
  
+#### 7. Install `brew install glow`
+ https://github.com/charmbracelet/glow
+
+#### 8. Install `brew install slides`
+ https://github.com/maaslalani/slides
 
 ### <a href="notes.adoc">MORE</a> 
