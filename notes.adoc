@@ -16,7 +16,7 @@
  brew install ripgrep
 
 
-- Configure global gitignore 
+- Configure global `.gitignore`
 
   ln -s ${dotfile_path}/dotfiles/gitignore ~/.gitignore
 

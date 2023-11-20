@@ -1,6 +1,6 @@
 .DS_Store
 .idea
-.swp
+*.swp
 .sw
 .class
 
