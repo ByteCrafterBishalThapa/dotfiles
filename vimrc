@@ -11,18 +11,9 @@ Plug 'Yggdroot/indentLine'
 Plug 'dense-analysis/ale'
 Plug 'junegunn/fzf.vim'
 Plug 'machakann/vim-highlightedyank'
+Plug 'ellisonleao/glow.nvim'
 call plug#end()
 
-" -------- Only Yank and Paste from * register ----
-" noremap  y "zy
-" noremap  Y "zY
-" noremap  p "zp
-" noremap  P "zP
-" vnoremap y "zy
-" vnoremap Y "zY
-" vnoremap p "zp
-" noremap  dd "zdd
-" noremap  yy "zyy
 " ---------------------- Vim Improed Config --------------------------------
 let mapleader = " "                   " Map leader to Space
 let g:loaded_matchparen=1						  " Disable matching parenthesis hightlightg	
@@ -99,7 +90,6 @@ set noshowmode
 "set relativenumber
 set t_Co=256                          " Set terminal color
 set background=dark                   " no comment
-set noro                              " By default, vimdiff opens file in readonly mode, this enables editing
 set textwidth=140
 set autowriteall
 " ----------------------------------------------------------------------------------------------------
@@ -143,6 +133,7 @@ autocmd FileType java :abbr sout System.out.println("");<Esc>3h2x
 autocmd FileType java :abbr psvm public static void main(String[] args) {<CR>}<Esc>ko
 
 autocmd FileType nerdtree nnoremap <buffer> <Esc> <C-w>l
+
 
 " Sets Alt + --> (tab next) & Alt + <-- (tab previous)
 " execute "set <M-f>=\ef"
@@ -250,9 +241,8 @@ if &diff
     set textwidth=500
 endif
 
-filetype plugin on
+
+autocmd! bufreadpost *.md set syntax=off
+autocmd! bufreadpost *.json set conceallevel=0
 autocmd Filetype java source ~/.vim/cursor_output-main/java/cursor_output.vim
 autocmd Filetype javascript source ~/.vim/cursor_output-main/javascript/cursor_output.vim
-autocmd FileType java syntax off
-autocmd FileType markdown syntax off
-

@@ -1,3 +1,4 @@
+set -o vi
 # ------------oh-my-zsh---------------------------------
 # Path to your oh-my-zsh installation.
 ZSH_DISABLE_COMPFIX=true
@@ -8,6 +9,7 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 
 DISABLE_AUTO_TITLE="true"
 CASE_SENSITIVE="true"
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
@@ -16,10 +18,8 @@ CASE_SENSITIVE="true"
 plugins=(git docker kubectl minikube argocd pass)
 source $ZSH/oh-my-zsh.sh
 
-
 PROMPT='%{$fg[white]%}%~%{$reset_color%}$(git_prompt_info)'
 PROMPT+=" %(?:%{$fg_bold[green]%}$ :%{$fg_bold[red]%}$ )%{$reset_color%}"
-
 
 # git settings
 ZSH_THEME_GIT_PROMPT_PREFIX=" ${FG[075]}(${FG[078]}"
@@ -52,13 +52,12 @@ alias tree3="tree -L 3"
 alias dockerlsc="docker container list --format 'table {{.ID}} \t{{.Names}} \t{{.Image}} \t{{.Status}}'"
 
 # Save bash history to a file
-HISTSIZE=100000
-HISTFILESIZE=200000
-HISTCONTROL=ignoredups:ignorespace
-HISTFILE=~/.bash_history
+export HISTSIZE=100000
+export HISTFILESIZE=200000
+export HISTFILE=~/.zsh_history
+export HISTTIMEFORMAT="[%F %T] "
 
-# Set history fromat to include timestaps
-HISTTIMEFORMAT="%Y-%m-%d %T "
+setopt HIST_IGNORE_ALL_DUPS
 
 # ------------- Fuzzy Finder ---------------------------------
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -71,19 +70,13 @@ export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix'
 # To apply the command to CTRL-T as well
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-
-
 # --------------------------------------------------------------
 
 [[ -s "$HOME/.zsh_profile" ]] && source "$HOME/.zsh_profile"
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+# --------------------------------------------------------------
+# THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-
 export JAVA_HOME=${SDKMAN_CANDIDATES_DIR}/java/${CURRENT}
-
-
-
-
