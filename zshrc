@@ -1,5 +1,3 @@
-set -o vi
-# ------------oh-my-zsh---------------------------------
 # Path to your oh-my-zsh installation.
 ZSH_DISABLE_COMPFIX=true
 export ZSH="$HOME/.oh-my-zsh"
@@ -21,7 +19,7 @@ source $ZSH/oh-my-zsh.sh
 PROMPT='%{$fg[white]%}%~%{$reset_color%}$(git_prompt_info)'
 PROMPT+=" %(?:%{$fg_bold[green]%}$ :%{$fg_bold[red]%}$ )%{$reset_color%}"
 
-# git settings
+# --------------------------------------------- Git settings
 ZSH_THEME_GIT_PROMPT_PREFIX=" ${FG[075]}(${FG[078]}"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 ZSH_THEME_GIT_PROMPT_DIRTY="${FG[214]}*%{$reset_color%}"
@@ -30,6 +28,26 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="${FG[075]})%{$reset_color%}"
 export EDITOR='vim'
 export TERM=xterm-256color
 export XDG_CONFIG_HOME=~/.config
+
+# --------------------------------------- Vim mode terminal (GNU ReadLine Editor) & Cursor Config
+bindkey -v
+export KEYTIMEOUT=1
+
+zle-keymap-select () {
+  if [ $KEYMAP = vicmd ]; then
+      printf "\033[2 q" # Block Cursor in CMD mode
+  else
+      printf "\033[6 q" # Line Cursor in Insert mode
+  fi
+}
+zle -N zle-keymap-select
+
+zle-line-init () {
+  zle -K viins
+  printf "\033[6 q"
+}
+zle -N zle-line-init
+
 
 # ------------ alias --------------------------------
 alias vim="vim"

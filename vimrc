@@ -246,3 +246,8 @@ autocmd! bufreadpost *.md set syntax=off
 autocmd! bufreadpost *.json set conceallevel=0
 autocmd Filetype java source ~/.vim/cursor_output-main/java/cursor_output.vim
 autocmd Filetype javascript source ~/.vim/cursor_output-main/javascript/cursor_output.vim
+
+" Cursor Shape on opening vim and exiting Vim
+let &t_ti .= "\e[2 q" " Block cursor
+let &t_te .= "\e[4 q" " Line cursor
+
