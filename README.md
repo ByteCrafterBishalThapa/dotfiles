@@ -53,4 +53,23 @@ Install Tmux plugin to copy to system clipboard
 #### 8. Install `brew install slides`
  https://github.com/maaslalani/slides
 
+#### 9. Install `brew install zsh-syntax-highlighting `
+ https://formulae.brew.sh/formula/zsh-syntax-highlighting
+
+Note: Follow the installation instruction
+
+#### 10. Install `brew install lf`
+ https://formulae.brew.sh/formula/lf
+
 ### <a href="notes.adoc">MORE</a> 
+
+
+
+
+
+
+
+
+
+
+

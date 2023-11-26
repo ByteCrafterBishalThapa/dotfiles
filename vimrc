@@ -24,9 +24,10 @@ let g:loaded_matchparen=1						  " Disable matching parenthesis hightlightg
 
 " ----------------------------------------------------------------------------------------------------
 map <leader>s :w<CR>
+map <leader>sq :wq<CR>
 map <leader>qb :bd<CR>
-map <leader>qa :qa<CR>
-map <leader>qf :q!<CR>
+map <leader>qq :q<CR>
+map <leader>qf :qa!<CR>
 
 map <leader>th :set hlsearch!<CR>
 
@@ -126,20 +127,17 @@ filetype on             " enable filetype detection
 filetype plugin on      " load file-specific plugins
 filetype plugin indent on
 
-autocmd FileType asciidoc setlocal spell spelllang=en_us
-
 " Define abbreviation for Java files
 autocmd FileType java :abbr sout System.out.println("");<Esc>3h2x
 autocmd FileType java :abbr psvm public static void main(String[] args) {<CR>}<Esc>ko
 
+" autocmd FileType markdown setlocal spell spelllang=en_us
 autocmd FileType nerdtree nnoremap <buffer> <Esc> <C-w>l
+autocmd! bufreadpost *.md set syntax=off
+autocmd! bufreadpost *.json set conceallevel=0
+autocmd Filetype java source ~/.vim/cursor_output-main/java/cursor_output.vim
+autocmd Filetype javascript source ~/.vim/cursor_output-main/javascript/cursor_output.vim
 
-
-" Sets Alt + --> (tab next) & Alt + <-- (tab previous)
-" execute "set <M-f>=\ef"
-" execute "set <M-b>=\eb"
-" map <M-f> gt
-" map <M-b> gT
 
 " Use a line cursor within insert mode and a block cursor everywhere else.
 let &t_SI = "\e[6 q"
@@ -153,7 +151,6 @@ inoremap <C-y> <C-o><C-y>
 highlight VertSplit cterm=none gui=none
 highlight LineNr ctermfg=grey
 
-
 " Vim Highlightedyank
 let g:highlightedyank_highlight_color = "rgba(160, 160, 160, 155)"
 let g:highlightedyank_highlight_duration = 800
@@ -166,7 +163,6 @@ nmap <leader>ff :Files<CR>
 nmap <leader>fg :GFiles<CR>
 nmap <leader>fb :Buffer<CR>
 nmap <leader>fw :Rg 
-
 
 " Airline
 let g:airline_powerline_fonts = 1
@@ -218,6 +214,7 @@ set statusline+=%{HasTrailingWhitespace()}
 " Show the status on the second to last line
 set laststatus=2
 
+" -------------------------------------------------------------------------
 
 " Enable indentLine plugin for yaml file type 
 let g:indentLine_enabled = 1
@@ -241,13 +238,7 @@ if &diff
     set textwidth=500
 endif
 
-
-autocmd! bufreadpost *.md set syntax=off
-autocmd! bufreadpost *.json set conceallevel=0
-autocmd Filetype java source ~/.vim/cursor_output-main/java/cursor_output.vim
-autocmd Filetype javascript source ~/.vim/cursor_output-main/javascript/cursor_output.vim
-
-" Cursor Shape on opening vim and exiting Vim
+" Cursor shape configuration while opening vim and exiting Vim
 let &t_ti .= "\e[2 q" " Block cursor
 let &t_te .= "\e[4 q" " Line cursor
 
