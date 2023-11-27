@@ -58,20 +58,21 @@ lfcd () {
     fi
 }
 bindkey -s '^o' 'lfcd\n'
-# ---------------------------------------------------- Edit line in vim with ctrl-e:
+# ----------------------------------------------------------- Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
-# --------------------------------------------------- Alias
-alias vim="vim"
+# ----------------------------------------------------------- Change history binding [using fzf widget]
+bindkey "^A" fzf-history-widget
+# ------------------------------------------------------------ Alias
+alias v="vim"
 alias vi="vim"
 alias ls='ls -lG'
 alias gs='git status'
 alias slog="git log --graph --pretty=format:'%C(auto) %h %cr -%d %s %C(cyan)<%an>' --abbrev-commit -n 15"
 alias mci="mvn clean install"
 alias mciskiptest="mvn clean install -Dmaven.test.skip=true"
-alias master="git checkout master"
-alias main="git checkout main"
+alias main="git checkout main && (exit 0) || (c=$?; git checkout master; (exit $c))"  
 alias sjava="sdk use java" 
 alias evimconfig="vim ~/.vimrc"
 alias ezshconfig="vim ~/.zshrc"
@@ -92,21 +93,28 @@ setopt HIST_IGNORE_ALL_DUPS
 # Fuzzy Finder -----------------------------------------------------------------
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-function vf() {
- vim $(fzf --height 70% --layout=reverse --border --preview 'bat --color=always {}')
+function f() {
+  f_result=$(fzf --height 70% --layout=reverse --border --preview 'bat --color=always {}')
+  if [ $? -eq 0 ]; then
+    vim $f_result
+  fi
 }
+
 # Setting fd as the default source for fzf
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix'
 # To apply the command to CTRL-T as well
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-# --------------------------------------------------------------
+# --------------------------------------------------------------------------------
 
 [[ -s "$HOME/.zsh_profile" ]] && source "$HOME/.zsh_profile"
 
-# --------------------------------------------------------------
-# THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 export JAVA_HOME=${SDKMAN_CANDIDATES_DIR}/java/${CURRENT}
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/vault vault
+
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
