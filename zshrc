@@ -64,6 +64,14 @@ bindkey '^e' edit-command-line
 
 # ----------------------------------------------------------- Change history binding [using fzf widget]
 bindkey "^A" fzf-history-widget
+
+# ----------------------------------------------------------- Change Ctrl+K to start tmux copy mode
+start_tmux_copy_mode() {
+    tmux copy-mode
+}
+zle -N start_tmux_copy_mode
+bindkey -M vicmd '^k' start_tmux_copy_mode
+
 # ------------------------------------------------------------ Alias
 alias v="vim"
 alias vi="vim"
@@ -114,7 +122,5 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 export JAVA_HOME=${SDKMAN_CANDIDATES_DIR}/java/${CURRENT}
 
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /opt/homebrew/bin/vault vault
-
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+
