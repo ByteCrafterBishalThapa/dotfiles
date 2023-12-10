@@ -12,7 +12,7 @@ Clone the repo to desire location:
   ``$ export dotfile_path="$(pwd)"``
 
 ### 1. Install <a href="https://www.vim.org/">Vim or NVim</a>
-- `mkidr -p $HOME/.config/vim $HOME/.config/nvim
+- `mkidr -p $HOME/.config/vim $HOME/.config/nvim`
 - `ln -s $dotfile_path/vimrc $HOME/.config/vim/.vimrc`
 - `ln -s $dotfile_path/init.vim $HOME/.config/nvim`
 
