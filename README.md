@@ -1,20 +1,20 @@
-### Introduction
-This repo contains dot file configuration files.
+### Contains configuration files.
 
-### Clone this repo 
+### Installation 
+------ 
+Clone the repo to desire location:
+- cd into `dotfiles` folder
+  
+   ``$ cd dotfiles``
 
-Set the path of the clone repo in environment variable 
-```
-$ cd dotfile
-$ export dotfile_path="$(pwd)"
-```
+- create a temporary environment variable pointing to `dotfiles` folder
 
-### 1. Setup <a href="https://www.vim.org/">Vim or NVim</a>
-- `ln -s $dotfile_path/vimrc ~/.vimrc`
-- `ln -s $dotfile_path/init.vim ~/.config/nvim`
+  ``$ export dotfile_path="$(pwd)"``
 
-`$dofile_path` Where this repo is cloned 
-
+### 1. Install <a href="https://www.vim.org/">Vim or NVim</a>
+- `mkidr -p $HOME/.config/vim $HOME/.config/nvim
+- `ln -s $dotfile_path/vimrc $HOME/.config/vim/.vimrc`
+- `ln -s $dotfile_path/init.vim $HOME/.config/nvim`
 
 - Install the vim plugin manager <a href="https://github.com/junegunn/vim-plug">Vundle</a>
 
@@ -29,10 +29,14 @@ Open Vim on your terminal and type to install the plugin mentioned in the ~/.vim
 
 
 #### 2. Install <a href="https://ohmyz.sh/#install">Oh My Zsh</a>.
-- Create symbolic link `ln -s $dotfile_path/zshrc ~/.zshrc`
+- Installation command:
+  
+   `ZSH="$HOME/.config/oh-my-zsh" | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
 
-`$dofile_path` Where this repo is cloned 
+- Create symbolic link:
 
+   `ln -s $dotfile_path/zshrc $HOME/.config/zsh/.zshrc`
+todo:
 #### 3. Install <a href="https://brew.sh/"> HomeBrew </a>.
 - Follow the last instruction of the instllation. Should be something like below. Don't copy just follow instruction)
 
