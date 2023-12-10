@@ -1,14 +1,23 @@
 ### Introduction
 This repo contains configuration files. I use it to setup machine.
+
+```
+export 
 <hr>
 
-### Clone this repo and follow this instrusctions 
+### Clone this repo 
+
+Set the path of the clone repo in environment variable 
+```
+$ cd dotfile
+$ export dotfile_path="$(pwd)"
 
 ### 1. Setup <a href="https://www.vim.org/">Vim or NVim</a>
-- `ln -s ${dotfile_path}/dotfiles/vimrc ~/.vimrc`
-- `ln -s ${dotfile_path}/dotfiles/init.vim ~/.config/nvim`
+- `ln -s $dotfile_path/vimrc ~/.vimrc`
+- `ln -s $dotfile_path/init.vim ~/.config/nvim`
 
-`${dotfile_path}` Where this repo is cloned 
+`$dofile_path` Where this repo is cloned 
+
 
 - Install the vim plugin manager <a href="https://github.com/junegunn/vim-plug">Vundle</a>
 
@@ -23,9 +32,9 @@ Open Vim on your terminal and type to install the plugin mentioned in the ~/.vim
 
 
 #### 2. Install <a href="https://ohmyz.sh/#install">Oh My Zsh</a>.
-- Create symbolic link `ln -s ${dotfile_path}/dotfiles/zshrc ~/.zshrc`
+- Create symbolic link `ln -s $dotfile_path/zshrc ~/.zshrc`
 
-`${dotfile_path}` Where this repo is cloned 
+`$dofile_path` Where this repo is cloned 
 
 #### 3. Install <a href="https://brew.sh/"> HomeBrew </a>.
 - Follow the last instruction of the instllation. Should be something like below. Don't copy just follow instruction)
@@ -38,7 +47,7 @@ Next steps:
 ```
 
 #### 4. Install <a href="https://github.com/tmux/tmux/wiki">Tmux</a> 
-- Create symbolic link `ln -s ${dotfile_path}/dotfiles/tmux.conf ~/.tmux.conf`
+- Create symbolic link `ln -s $dotfile_path/tmux.conf ~/.tmux.conf`
 Install Tmux plugin to copy to system clipboard
 - brew install reattach-to-user-namespace
 
