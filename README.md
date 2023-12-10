@@ -19,10 +19,10 @@ Clone the repo to desire location:
 - Install the vim plugin manager <a href="https://github.com/junegunn/vim-plug">Vundle</a>
 
  ```
- git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+ git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.config/vim/.vim/bundle/Vundle.vim
  ```
 
-Open Vim on your terminal and type to install the plugin mentioned in the ~/.vimrc
+Open Vim on your terminal and type to install the plugin mentioned in the $HOME/.config/.vimrc
 ``:PlugInstall``
 
 - Install <a href="https://github.com/powerline/fonts">Powerline fonts </a>
