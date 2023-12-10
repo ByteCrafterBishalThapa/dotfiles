@@ -1,9 +1,5 @@
 ### Introduction
-This repo contains configuration files. I use it to setup machine.
-
-```
-export 
-<hr>
+This repo contains dot file configuration files.
 
 ### Clone this repo 
 
