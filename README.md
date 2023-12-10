@@ -7,6 +7,7 @@ Set the path of the clone repo in environment variable
 ```
 $ cd dotfile
 $ export dotfile_path="$(pwd)"
+```
 
 ### 1. Setup <a href="https://www.vim.org/">Vim or NVim</a>
 - `ln -s $dotfile_path/vimrc ~/.vimrc`
