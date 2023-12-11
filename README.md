@@ -13,7 +13,7 @@ Clone the repo to desire location:
 
 ### 0. Setup ZSH shell
 - Install zsh shell 
-- Make Zsh defaul shell
+- Make zsh defaul shell
   ``chsh -s $(which zsh)``
   
 - Setup zsh config files and folders 
