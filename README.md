@@ -15,9 +15,10 @@ Clone the repo to desire location:
 - Intall zsh shell 
 - Make Zsh defaul shell
   ``chsh -s $(which zsh)``
-- Create a zsh config folder and add a configuration file
+  
+- Setup zsh config files and folders 
 
-   `mkdir -p $HOME/.config/zshrc; ln -s $dotfile_path/zshrc $HOME/.config/zsh/.zshrc`
+   `mkdir -p $HOME/.config/zshrc; ln -s $dotfile_path/zshenv $HOME/.zshenv; ln -s $dotfile_path/zshrc $HOME/.config/zsh/.zshrc`
   
 chsh -s $(which zsh)
 ### 1. Install <a href="https://www.vim.org/">Vim or NVim</a>
