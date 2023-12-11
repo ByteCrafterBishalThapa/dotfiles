@@ -12,7 +12,7 @@ Clone the repo to desire location:
   ``$ export dotfile_path="$(pwd)"``
 
 ### 0. Setup ZSH shell
-- Intall zsh shell 
+- Install zsh shell 
 - Make Zsh defaul shell
   ``chsh -s $(which zsh)``
   
