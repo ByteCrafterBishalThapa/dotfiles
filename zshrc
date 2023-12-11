@@ -71,7 +71,20 @@ start_tmux_copy_mode() {
 }
 zle -N start_tmux_copy_mode
 bindkey -M vicmd '^k' start_tmux_copy_mode
+bindkey '^k' start_tmux_copy_mode
 
+# ------------------------------------------------------------ find main branch
+
+function git_checkout_main() {
+ total_branch=$(git branch -l main master | wc -l)
+ if [ $total_branch -eq 2 ]
+ then; 
+   echo "$fg_bold[red]Main branch conflict.$reset_color";
+   git ls-remote --symref origin HEAD | grep -o "master\|main" | xargs git checkout
+ else
+   git checkout main && (exit 0) || (c=$?; git checkout master; (exit $c))
+ fi;
+}
 # ------------------------------------------------------------ Alias
 alias v="vim"
 alias vi="vim"
@@ -80,7 +93,7 @@ alias gs='git status'
 alias slog="git log --graph --pretty=format:'%C(auto) %h %cr -%d %s %C(cyan)<%an>' --abbrev-commit -n 15"
 alias mci="mvn clean install"
 alias mciskiptest="mvn clean install -Dmaven.test.skip=true"
-alias main="git checkout main && (exit 0) || (c=$?; git checkout master; (exit $c))"  
+alias main="git_checkout_main"
 alias sjava="sdk use java" 
 alias evimconfig="vim ~/.vimrc"
 alias ezshconfig="vim ~/.zshrc"
@@ -107,7 +120,6 @@ function f() {
     vim $f_result
   fi
 }
-
 # Setting fd as the default source for fzf
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix'
 # To apply the command to CTRL-T as well
