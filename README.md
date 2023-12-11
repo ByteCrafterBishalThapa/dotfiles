@@ -20,7 +20,6 @@ Clone the repo to desire location:
 
    `mkdir -p $HOME/.config/zshrc; ln -s $dotfile_path/zshenv $HOME/.zshenv; ln -s $dotfile_path/zshrc $HOME/.config/zsh/.zshrc`
   
-chsh -s $(which zsh)
 ### 1. Install <a href="https://www.vim.org/">Vim or NVim</a>
 - `mkidr -p $HOME/.config/vim $HOME/.config/nvim`
 - `ln -s $dotfile_path/vimrc $HOME/.config/vim/.vimrc`
