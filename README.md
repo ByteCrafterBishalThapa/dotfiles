@@ -21,15 +21,13 @@ Clone the repo to desire location:
    `mkdir -p $HOME/.config/zshrc; ln -s $dotfile_path/zshenv $HOME/.zshenv; ln -s $dotfile_path/zshrc $HOME/.config/zsh/.zshrc`
   
 ### 1. Install <a href="https://www.vim.org/">Vim </a>
-- `mkidr -p $HOME/.config/.vim`
-- `ln -s $dotfile_path/vimrc $HOME/.config/.vim/vimrc`
+- `mkidr -p $HOME/.config/vim`
+- `ln -s $dotfile_path/vimrc $HOME/.config/vim/.vimrc`
 
 - Install the vim plugin manager <a href="https://github.com/junegunn/vim-plug">Vundle</a>
 
  ```
-curl -fLo $HOME/.config/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
+ git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.config/vim/.vim/bundle/Vundle.vim
  ```
 
 Open Vim on your terminal and type to install the plugin mentioned in the $HOME/.config/.vimrc
@@ -82,14 +80,3 @@ Note: Follow the installation instruction
  https://formulae.brew.sh/formula/lf
 
 ### <a href="notes.adoc">MORE</a> 
-
-
-
-
-
-
-
-
-
-
-
