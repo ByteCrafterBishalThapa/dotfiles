@@ -18,7 +18,7 @@ Clone the repo to desire location:
   
 - Setup zsh config files and folders 
 
-   `mkdir -p $HOME/.config/zshrc; ln -s $dotfile_path/zshenv $HOME/.zshenv; ln -s $dotfile_path/zshrc $HOME/.config/zsh/.zshrc`
+   `mkdir -p $HOME/.config/zsh; ln -s $dotfile_path/zshenv $HOME/.zshenv; ln -s $dotfile_path/zshrc $HOME/.config/zsh/.zshrc`
   
 ### 1. Install <a href="https://www.vim.org/">Vim </a>
 - `mkidr -p $HOME/.config/vim`
