@@ -1,7 +1,6 @@
 .Some more steps
 - Append `bin` folder in the PATH
 
-  export PATH="$HOME/thapabishal/dotfiles/bin:$PATH"
 
 - Configure Git To use Vimdiff
 
@@ -18,7 +17,7 @@
 
 - Configure global `.gitignore`
 
-  ln -s ${dotfile_path}/dotfiles/gitignore ~/.gitignore
+  ln -s ${dotfile_path}/gitignore ~/.gitignore
 
   git config --global core.excludesfile ~/.gitignore
 
